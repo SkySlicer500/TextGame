@@ -1,2 +1,2 @@
-# text-game
-# fun
+# Text Game
+A game based in text

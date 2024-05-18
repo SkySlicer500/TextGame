@@ -7,6 +7,9 @@ class Item:
     self.stat = stat #In relation to the item type, how effective it is, ex: weapon stat would be damage, food stat would be saturation
     self.equipability = equipability #0 if it can't be equipped, otherwise to designate specific armor or accessory slot
 
+def interact():
+  playerIn = input().split()
+
 def start():
   return(0)
 

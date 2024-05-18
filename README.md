@@ -1,2 +1,2 @@
 # Text Game
-An rpg game told only through text
+An rpg game experienced through only the text in your console.

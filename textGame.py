@@ -33,7 +33,7 @@ def interact():
   playerIn = input().split()
   #Keywords for actions bellow
   if (playerIn[0] == "here"):
-    print("You are here")
+    print("You are here") #Give information of the current location
   else:
     print("You were too lost in thought to do anything")
 

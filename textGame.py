@@ -1,5 +1,15 @@
 area = 0
 
+inventory = []
+
+class Area:
+  def __innit__(self, characters, items, enemies, tileX, tileY):
+    self.characters = characters #People you can find in the area
+    self.items = items #Items that can be found in the area
+    self.enemies = enemies #Enemies that you can encounter in the area
+    self.tileX = tileX #Width of the area
+    self.tileY = tileY #Length of the area
+
 class Item:
   def __innit__(self, name, type, stat, equipability):
     self.name = name #The name of the created item
@@ -11,7 +21,7 @@ def interact():
   playerIn = input().split()
   #Keywords for actions bellow
   if (playerIn[0] == ""):
-    #action goes here
+    #action data goes here
   else:
     print("You were too lost in thought to do anything")
 

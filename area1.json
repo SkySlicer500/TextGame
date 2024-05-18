@@ -1,0 +1,15 @@
+{
+    "area": [
+        "Area 1",
+        "A tutorial area that seems to have no escape."
+    ],
+
+    "characters": [
+        ["Tutorial", "Bot", "I guess you're trapped here as well :]"],
+        ["Tutorial2", "Bot2", "Can you try to get me out of here?"]
+    ],
+
+    "items": [
+        ["Wood Sword", "Not very strong, but it works"]
+    ]
+}

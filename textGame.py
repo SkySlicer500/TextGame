@@ -10,6 +10,12 @@ class Area:
     self.tileX = tileX #Width of the area
     self.tileY = tileY #Length of the area
 
+class Enemy:
+  def __innit__(self, name, damage, defense):
+    self.name = name #The name of the enemy
+    self.damgae = damage #The damage it can deal per turn
+    self.defense = defense #How much damage it can prevent when attacked
+
 class Item:
   def __innit__(self, name, type, stat, equipability):
     self.name = name #The name of the created item

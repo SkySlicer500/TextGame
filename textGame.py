@@ -5,7 +5,7 @@ currentArea = 0
 currentRoom = ""
 
 def interact():
-    global currentRoom
+    global currentArea, currentRoom
     playerIn = input().split()
     try:
         #Keywords for actions bellow
@@ -13,7 +13,17 @@ def interact():
         if (keyword == "help"):
             print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninv - opens the inventory")
         elif (keyword == "here"):
-            print(currentArea[currentRoom]["room"][0])
+            print("\n", currentArea[currentRoom]["room"][0], "\n")
+            print("People:")
+            for x in range(len(currentArea[currentRoom]["characters"])):
+                print("--", currentArea[currentRoom]["characters"][x][0], currentArea[currentRoom]["characters"][x][1], "--")
+            print("Items:")
+            for x in range(len(currentArea[currentRoom]["items"])):
+                print("--", currentArea[currentRoom]["items"][x][0], "--")
+            print("Rooms:")
+            for x in range(len(currentArea[currentRoom]["room"][1])):
+                print("--", currentArea[currentRoom]["room"][1][x], "--")
+
         elif (keyword == "goto"):
             try:
                 location = playerIn[1]
@@ -31,6 +41,7 @@ def interact():
                     if (currentArea[currentRoom]["items"][x][0] == item):
                         inventory.append(currentArea[currentRoom]["items"][x])
                         print(currentArea[currentRoom]["items"][x][0], "was added to your inventory!")
+                        del(currentArea[currentRoom]["items"][x])
                         break
             except(Exception):
                 print("Grab what?")

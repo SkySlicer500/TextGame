@@ -19,10 +19,11 @@ character list
 rank (wardawn)
 1. squir
 2. ranker
-3. positon leader
-4. prior general
-5. general
-6. loanier
+3. knight
+4. positon leader
+5. prior general
+6. general
+7. loanier
 
 kingdoms
 -  kingdom of harer

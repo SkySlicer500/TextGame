@@ -4,16 +4,22 @@ inventory = []
 
 class Area:
   def __innit__(self, characters, items, enemies, tileX, tileY):
-    self.characters = characters #People you can find in the area
-    self.items = items #Items that can be found in the area
-    self.enemies = enemies #Enemies that you can encounter in the area
+    self.characters = characters #People you can find in the area (Array)
+    self.items = items #Items that can be found in the area (Array)
+    self.enemies = enemies #Enemies that you can encounter in the area (Array)
     self.tileX = tileX #Width of the area
     self.tileY = tileY #Length of the area
+
+class Character:
+  def __innit__(self, name, dialogue, items):
+    self.name = name #The name of the character
+    self.dialogue = dialogue #The dialogue they can give when you speak to them (Array)
+    self.items = items #Items that they will give you when you speak to them (Array)
 
 class Enemy:
   def __innit__(self, name, damage, defense):
     self.name = name #The name of the enemy
-    self.damgae = damage #The damage it can deal per turn
+    self.damage = damage #The damage it can deal per turn
     self.defense = defense #How much damage it can prevent when attacked
 
 class Item:

@@ -9,6 +9,11 @@ class Item:
 
 def interact():
   playerIn = input().split()
+  #Keywords for actions bellow
+  if (playerIn[0] == ""):
+    #action goes here
+  else:
+    print("You were too lost in thought to do anything")
 
 def start():
   return(0)

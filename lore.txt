@@ -15,6 +15,7 @@ character list
 -  the right birds
 * town
 -  jerico
+
 rank (wardawn)
 1. squir
 2. ranker
@@ -22,7 +23,8 @@ rank (wardawn)
 4. prior general
 5. general
 6. loanier
-* kingdom
+
+kingdoms
 -  kingdom of harer
 
 areas

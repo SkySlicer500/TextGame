@@ -2,27 +2,37 @@
     "area": [
         "Area 1",
         "A tutorial area that seems to have no escape.",
-        ["room1", "room2"]
+        "room1"
     ],
 
     "room1": {
+        "room": [
+            "You can see two people in this room, there seems to be an object laying on the ground, and there is a single door leading to another room.",
+            ["room2"]
+        ],
+
         "characters": [
             ["Tutorial", "Bot", "I guess you're trapped here as well :]"],
             ["Tutorial2", "Bot2", "Can you try to get me out of here?"]
         ],
 
         "items": [
-            ["Wood Sword", "Not very strong, but it works"]
+            ["Wood-Sword", "Not very strong, but it works"]
         ]
     },
 
     "room2": {
+        "room": [
+            "There is only one person in this room, and a giant key sitting in the corner, there also appears to be a giant door with ancient symbols all over it.",
+            ["room1"]
+        ],
+
         "characters": [
             ["Tutorial3", "Bot3", "It's no use, the door won't open."]
         ],
 
         "items": [
-            ["Big Key", "Too large to fit into any lock you've ever seen."]
+            ["Big-Key", "Too large to fit into any lock you've ever seen."]
         ]
     }
 }

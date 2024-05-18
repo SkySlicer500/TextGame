@@ -1,14 +1,18 @@
-objects
--swords
--
+objects/wepons
+-swords (bacic damage)
+-keys
+-the magic system
 
 
 players
-
+-quest givers
+-item givers
 
 
 suroundings
-
-
+-signs
+-memories
 
 enemys
+-bosses
+-mobs

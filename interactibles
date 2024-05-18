@@ -1,7 +1,7 @@
 objects/wepons
 -swords (bacic damage)
--keys
--the magic system
+-keys (for locked doors)
+-the magic system (complex damage)
 
 
 players
@@ -12,6 +12,7 @@ players
 suroundings
 -signs
 -memories
+-doors
 
 enemys
 -bosses

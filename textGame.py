@@ -26,8 +26,8 @@ class Item:
 def interact():
   playerIn = input().split()
   #Keywords for actions bellow
-  if (playerIn[0] == ""):
-    #action data goes here
+  if (playerIn[0] == "here"):
+    print("You are here")
   else:
     print("You were too lost in thought to do anything")
 

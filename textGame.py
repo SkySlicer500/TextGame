@@ -33,9 +33,11 @@ def interact():
                 for x in range(len(currentArea[currentRoom]["room"][1])):
                     if (currentArea[currentRoom]["room"][1][x] == location):
                         currentRoom = currentArea[currentRoom]["room"][1][x]
+                        print("You went to", currentRoom)
+                        print(currentArea[currentRoom]["room"][0])
                         break
-                print("You went to", currentRoom)
-                print(currentArea[currentRoom]["room"][0])
+                    if (x == len(currentArea[currentRoom]["room"][1])-1):
+                        print("You searched, but found no such place.")
             except(Exception):
                 print("Go to where?")
         elif (keyword == "grab"):
@@ -47,6 +49,8 @@ def interact():
                         print(currentArea[currentRoom]["items"][x][0], "was added to your inventory!")
                         del(currentArea[currentRoom]["items"][x])
                         break
+                    if (x == len(currentArea[currentRoom]["items"])-1):
+                        print("You searched, but found no such item.")
             except(Exception):
                 print("Grab what?")
         elif (keyword == "talkto"):
@@ -56,6 +60,8 @@ def interact():
                     if (currentArea[currentRoom]["characters"][x][0] == person):
                         print(currentArea[currentRoom]["characters"][x][0], ":", currentArea[currentRoom]["characters"][x][2])
                         break
+                    if (x == len(currentArea[currentRoom]["characters"])-1):
+                        print("You searched, but were unable to find anyone by that name.")
             except(Exception):
                 print("Talk to who?")
         elif (keyword == "inv"):

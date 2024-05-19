@@ -71,6 +71,18 @@ def interact():
                                 if (currentArea[currentRoom]["events"][y][0] == event):
                                     if (inventory[x][2] == currentArea[currentRoom]["events"][y][2]):
                                         print(currentArea[currentRoom]["events"][y][3])
+                                        type = currentArea[currentRoom]["events"][y][4]
+                                        effect = currentArea[currentRoom]["events"][y][5]
+                                        if (type == "room"):
+                                            currentArea[currentRoom]["room"][1].append(effect)
+                                        elif (type == "characters"):
+                                            currentArea[currentRoom]["characters"].append(effect)
+                                        elif (type == "items"):
+                                            currentArea[currentRoom]["items"].append(effect)
+                                        elif (type == "enemies"):
+                                            currentArea[currentRoom]["enemies"].append(effect)
+                                        elif (type == "events"):
+                                            currentArea[currentRoom]["enemies"].append(effect)
                                 break
                         break
             except(Exception):

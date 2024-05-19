@@ -6,24 +6,27 @@ currentRoom = ""
 
 def interact():
     global currentArea, currentRoom
+    print()
     playerIn = input().split()
+    print()
     try:
-        #Keywords for actions bellow
         keyword = playerIn[0]
         if (keyword == "help"):
-            print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninv - opens the inventory")
+            print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninv - opens the inventory\nuse - use an item on an object")
         elif (keyword == "here"):
-            print("\n", currentArea[currentRoom]["room"][0], "\n")
+            print(currentArea[currentRoom]["room"][0])
             print("People:")
             for x in range(len(currentArea[currentRoom]["characters"])):
-                print("--", currentArea[currentRoom]["characters"][x][0], currentArea[currentRoom]["characters"][x][1], "--")
+                print("--", currentArea[currentRoom]["characters"][x][0], currentArea[currentRoom]["characters"][x][1])
             print("Items:")
             for x in range(len(currentArea[currentRoom]["items"])):
-                print("--", currentArea[currentRoom]["items"][x][0], "--")
+                print("--", currentArea[currentRoom]["items"][x][0])
             print("Rooms:")
             for x in range(len(currentArea[currentRoom]["room"][1])):
-                print("--", currentArea[currentRoom]["room"][1][x], "--")
-
+                print("--", currentArea[currentRoom]["room"][1][x])
+            print("Events:")
+            for x in range(len(currentArea[currentRoom]["events"])):
+                print("--", currentArea[currentRoom]["events"][x][0])
         elif (keyword == "goto"):
             try:
                 location = playerIn[1]
@@ -32,6 +35,7 @@ def interact():
                         currentRoom = currentArea[currentRoom]["room"][1][x]
                         break
                 print("You went to", currentRoom)
+                print(currentArea[currentRoom]["room"][0])
             except(Exception):
                 print("Go to where?")
         elif (keyword == "grab"):
@@ -56,11 +60,25 @@ def interact():
                 print("Talk to who?")
         elif (keyword == "inv"):
             print(inventory)
+        elif (keyword == "use"):
+            try:
+                if (playerIn[2] == "on"):
+                    item = playerIn[1]
+                    event = playerIn[3]
+                    for x in range(len(inventory)):
+                        if (inventory[x][0] == item):
+                            for y in range(len(currentArea[currentRoom]["events"])):
+                                if (currentArea[currentRoom]["events"][y][0] == event):
+                                    if (inventory[x][2] == currentArea[currentRoom]["events"][y][2]):
+                                        print(currentArea[currentRoom]["events"][y][3])
+                                break
+                        break
+            except(Exception):
+                print("Use what on what?")         
         else:
             print("You were too lost in thought to do anything, you consider looking for \"help\" to remember what you were doing.")
     except(Exception):
         print("You were too lost in thought to do anything, you consider looking for \"help\" to remember what you were doing.")
-
 
 def start():
     global currentArea, currentRoom

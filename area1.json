@@ -18,7 +18,11 @@
 
         "items": [
             ["Wood-Sword", "Not very strong, but it works"]
-        ]
+        ],
+
+        "enemies": [],
+
+        "events": []
     },
 
     "room2": {
@@ -32,7 +36,28 @@
         ],
 
         "items": [
-            ["Big-Key", "Too large to fit into any lock you've ever seen."]
+            ["Big-Key", "Too large to fit into any lock you've ever seen.", 0]
+        ],
+
+        "enemies": [],
+
+        "events": [
+            ["Big-Door", "Blocking the path to anything else is a giant door, there are ancient markings written all over it. Noteable is a large keyhole to big for any key you've ever seen", 0, "What do you know, the door opened."]
         ]
+    },
+
+    "room3": {
+        "room": [
+            "No one has ever made it to this room before.",
+            ["room2"]
+        ],
+
+        "characters": [],
+
+        "items": [],
+
+        "enemies": [],
+
+        "events": []
     }
 }

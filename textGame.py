@@ -83,8 +83,8 @@ def interact():
                                             currentArea[currentRoom]["enemies"].append(effect)
                                         elif (type == "events"):
                                             currentArea[currentRoom]["enemies"].append(effect)
-                                break
-                        break
+                                    break
+                            break
             except(Exception):
                 print("Use what on what? That didn't seem to work...")         
         else:

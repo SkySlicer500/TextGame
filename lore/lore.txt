@@ -28,13 +28,6 @@ rank (wardawn)
 kingdoms
 -  kingdom of harer
 
-areas
-* the town of jerico
--  the town of jerico is a peacful farming, non religous, town that believes in kindness and second chances. the style of the town is very anceient aisa with one story buildings made of stone and wood.
-* kingdom of harer
--  the kingdom of harer is a athoritative and brash city with advance tech, very religious. the city is composed of smooth stone buildings supported with iron rods.
-* forest for the lost
--  forest for the lost is a dense dark oak forest allways covered in fog. no light ever touches the ground and the distance seems unreachable
 
 background (rey)
 -  rey was taken by raiders when he was young, his whole village was destroyed. rey was taken because the raiders beleived he was special. rey was thrown into a doungen for years and years until the countrys military 

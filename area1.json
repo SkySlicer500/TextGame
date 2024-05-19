@@ -42,7 +42,7 @@
         "enemies": [],
 
         "events": [
-            ["Big-Door", "Blocking the path to anything else is a giant door, there are ancient markings written all over it. Noteable is a large keyhole to big for any key you've ever seen", 0, "What do you know, the door opened."]
+            ["Big-Door", "Blocking the path to anything else is a giant door, there are ancient markings written all over it. Noteable is a large keyhole too big for any key you've ever seen", 0, "What do you know, the door opened.", "room", "room3"]
         ]
     },
 

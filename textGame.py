@@ -21,12 +21,12 @@ def interact():
             print("Items:")
             for x in range(len(currentArea[currentRoom]["items"])):
                 print("--", currentArea[currentRoom]["items"][x][0])
-            print("Rooms:")
+            print("Paths:")
             for x in range(len(currentArea[currentRoom]["room"][1])):
                 print("--", currentArea[currentRoom]["room"][1][x])
-            print("Events:")
-            for x in range(len(currentArea[currentRoom]["events"])):
-                print("--", currentArea[currentRoom]["events"][x][0])
+            print("Structures:")
+            for x in range(len(currentArea[currentRoom]["structures"])):
+                print("--", currentArea[currentRoom]["structures"][x][0])
         elif (keyword == "goto"):
             try:
                 location = playerIn[1]
@@ -75,10 +75,10 @@ def interact():
                         if (inventory[x][0] == item):
                             for y in range(len(currentArea[currentRoom]["events"])):
                                 if (currentArea[currentRoom]["events"][y][0] == event):
-                                    if (inventory[x][2] == currentArea[currentRoom]["events"][y][2]):
-                                        print(currentArea[currentRoom]["events"][y][3])
-                                        type = currentArea[currentRoom]["events"][y][4]
-                                        effect = currentArea[currentRoom]["events"][y][5]
+                                    if (inventory[x][2] == currentArea[currentRoom]["events"][y][1]):
+                                        print(currentArea[currentRoom]["events"][y][2])
+                                        type = currentArea[currentRoom]["events"][y][3]
+                                        effect = currentArea[currentRoom]["events"][y][4]
                                         if (type == "room"):
                                             currentArea[currentRoom]["room"][1].append(effect)
                                         elif (type == "characters"):

@@ -86,7 +86,7 @@ def interact():
                                 break
                         break
             except(Exception):
-                print("Use what on what?")         
+                print("Use what on what? That didn't seem to work...")         
         else:
             print("You were too lost in thought to do anything, you consider looking for \"help\" to remember what you were doing.")
     except(Exception):

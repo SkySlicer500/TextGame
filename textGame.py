@@ -90,7 +90,13 @@ def interact():
                                         elif (type == "events"):
                                             currentArea[currentRoom]["enemies"].append(effect)
                                     break
+                                if (y == len(currentArea[currentRoom]["events"])-1):
+                                    print("Such a thing was not found in the room.")
                             break
+                        if (x == len(inventory)-1):
+                            print("You couldn't find an item like that in your inventory.")
+                    if (0 == len(inventory)):
+                        print("You couldn't find any items in your inventory.")
             except(Exception):
                 print("Use what on what? That didn't seem to work...")         
         else:

@@ -2,6 +2,8 @@
 An rpg game experienced through only the text in your console.
 
 # Creating JSON Areas
+Once an Area file is created name it whatever you want followed by .json and put the file in the areas folder. In order to load the file into the game, put it into the loader.json file
+
         {
             "area": [
                 "NAME OF THE AREA",
@@ -39,7 +41,6 @@ An rpg game experienced through only the text in your console.
     
         "SECOND ROOM": {SECOND ROOM}
     }
-Once an Area file is created name it whatever you want followed by .json and put the file in the areas folder. In order to load the file into the game, put it into the loader.json file
 # Configuring loader.json
     {
         "areas": [

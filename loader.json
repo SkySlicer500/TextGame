@@ -1,0 +1,7 @@
+{
+    "areas": [
+        "area1.json"
+    ],
+
+    "start": "area1.json"
+}

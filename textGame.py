@@ -77,6 +77,12 @@ def interact():
                 for x in range(len(currentArea[currentRoom]["structures"])):
                     if (currentArea[currentRoom]["structures"][x][0] == structure):
                         print(currentArea[currentRoom]["structures"][x][1])
+                        try:
+                            if (currentArea[currentRoom]["structures"][x][2] != None):
+                                triggerEvent(currentArea[currentRoom]["structures"][x][2])
+                        except(Exception):
+                            pass
+                        break
                         break
                     if (x == len(currentArea[currentRoom]["structures"])-1):
                         print("You searched, but were unable to find anything by that name.")
@@ -106,12 +112,12 @@ def interact():
 def triggerEvent(eventKey):
     global currentArea, currentRoom, inventory
     for x in range(len(currentArea[currentRoom]["events"])):
-        if (eventKey == currentArea[currentRoom]["events"][x][1]):
-            print(currentArea[currentRoom]["events"][x][2])
-            for y in range(len(currentArea[currentRoom]["events"][x][3])):
-                action = currentArea[currentRoom]["events"][x][3][y][0]
-                key = currentArea[currentRoom]["events"][x][3][y][1]
-                effect = currentArea[currentRoom]["events"][x][3][y][2]
+        if (eventKey == currentArea[currentRoom]["events"][x][0]):
+            print(currentArea[currentRoom]["events"][x][1])
+            for y in range(len(currentArea[currentRoom]["events"][x][2])):
+                action = currentArea[currentRoom]["events"][x][2][y][0]
+                key = currentArea[currentRoom]["events"][x][2][y][1]
+                effect = currentArea[currentRoom]["events"][x][2][y][2]
                 if (action == "add"):
                     if (key == "room"):
                         currentArea[currentRoom]["room"][1].append(effect)

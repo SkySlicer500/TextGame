@@ -138,12 +138,12 @@ def triggerEvent(eventKey):
                         effect = allAreas[currentArea][currentRoom]["events"][x][2][y][3]
                         if (key == "room"):
                             for z in range(len(allAreas[currentArea][location]["room"][1])):
-                                if (allAreas[currentArea][currentRoom]["room"][1][z] == effect):
-                                    del(allAreas[currentArea][currentRoom]["room"][1][z])
+                                if (allAreas[currentArea][location]["room"][1][z] == effect):
+                                    del(allAreas[currentArea][location]["room"][1][z])
                         else:
                             for z in range(len(allAreas[currentArea][location][key])):
-                                if (allAreas[currentArea][location][key][1][z] == effect):
-                                    del(allAreas[currentArea][location][key][1][z])
+                                if (allAreas[currentArea][location][key][z][0] == effect):
+                                    del(allAreas[currentArea][location][key][z])
 
 def start():
     global currentArea, currentRoom, allAreas

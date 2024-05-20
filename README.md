@@ -17,17 +17,19 @@ An rpg game experienced through only the text in your console.
     
             "characters": [
                 ["FIRST NAME", "LAST NAME", "DIALOGUE", (OPTIONAL EVENT KEY)],
-                [SECOND CHARACTER]
+                (SECOND CHARACTER)
             ],
     
             "items": [
-                ["ITEM NAME", "ITEM DESCRIPTION", (OPTIONAL EVENT KEY)]
+                ["ITEM NAME", "ITEM DESCRIPTION", (OPTIONAL EVENT KEY)],
+                (SECOND ITEM)
             ],
     
             "enemies": [],
     
             "structures": [
-                ["STRUCTURE NAME", "STRUCTURE DESCRIPTION", (OPTIONAL EVENT KEY)]
+                ["STRUCTURE NAME", "STRUCTURE DESCRIPTION", (OPTIONAL EVENT KEY)],
+                (SECOND STRUCTURE)
             ],
     
             "events": [
@@ -38,3 +40,11 @@ An rpg game experienced through only the text in your console.
         "SECOND ROOM": {SECOND ROOM}
     }
 # Configuring loader.json
+    {
+        "areas": [
+            "AREA FILE",
+            (SECOND AREA FILE)
+        ],
+    
+        "start": "STARTING AREA FILE"
+    }

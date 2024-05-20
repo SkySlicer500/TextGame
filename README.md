@@ -42,6 +42,8 @@ Once an Area file is created name it whatever you want followed by .json and put
         "SECOND ROOM": {SECOND ROOM}
     }
 # Configuring loader.json
+When you want to add more areas to your game than the ones initially provided, you will need to configure the loader to recognize the new packages.
+
     {
         "areas": [
             "AREA FILE",

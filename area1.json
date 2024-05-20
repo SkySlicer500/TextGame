@@ -48,7 +48,7 @@
         ],
 
         "events": [
-            ["Big-Door", 0, "What do you know, the door opened.", "room", "room3"]
+            [["structures", "Big-Door"], 0, "What do you know, the door kinda opened.", [["add", "room", "room3"], ["del", "inventory", "Big-Key"], ["del", "structures", "Big-Door"]]]
         ]
     },
 

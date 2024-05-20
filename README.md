@@ -6,7 +6,7 @@ An rpg game experienced through only the text in your console.
         "area": [
             "NAME OF THE AREA",
             "DESCRIPTION OF THE AREA",
-            "STARTING ROOM"
+            "STARTING ROOM NAME"
         ],
     
         "ROOM NAME": {

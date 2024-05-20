@@ -12,7 +12,7 @@ An rpg game experienced through only the text in your console.
         "ROOM NAME": {
             "room": [
                 "ROOM DESCRIPTION",
-                [ARRAY OF ROOMS YOU CAN GO TO]
+                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"]
             ],
     
             "characters": [

@@ -150,12 +150,12 @@ def start():
     print("\nWelcome to Text Game, type \"help\" for usable commands.\n")
     loader = json.load(open("loader.json"))
     for x in range(len(loader["areas"])):
-        try:
+        try: #Try normal folder typing
             allAreas.append(json.load(open("areas\\" + loader["areas"][x])))
             if (loader["areas"][x] == loader["start"]):
                 currentArea = x
         except(Exception):
-            try:
+            try: #Try alt folder typing
                 allAreas.append(json.load(open("areas/" + loader["areas"][x])))
                 if (loader["areas"][x] == loader["start"]):
                     currentArea = x

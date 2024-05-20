@@ -1,11 +1,12 @@
 import json
 
 inventory = []
+allAreas = []
 currentArea = 0
 currentRoom = ""
 
 def interact():
-    global currentArea, currentRoom, inventory
+    global allAreas, currentArea, currentRoom, inventory
     print()
     playerIn = input().split()
     print()
@@ -14,62 +15,62 @@ def interact():
         if (keyword == "help"):
             print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninv - opens the inventory\nuse - use an item")
         elif (keyword == "here"):
-            print(currentArea[currentRoom]["room"][0])
+            print(allAreas[currentArea][currentRoom]["room"][0])
             print("People:")
-            for x in range(len(currentArea[currentRoom]["characters"])):
-                print("--", currentArea[currentRoom]["characters"][x][0], currentArea[currentRoom]["characters"][x][1])
+            for x in range(len(allAreas[currentArea][currentRoom]["characters"])):
+                print("--", allAreas[currentArea][currentRoom]["characters"][x][0], allAreas[currentArea][currentRoom]["characters"][x][1])
             print("Items:")
-            for x in range(len(currentArea[currentRoom]["items"])):
-                print("--", currentArea[currentRoom]["items"][x][0])
+            for x in range(len(allAreas[currentArea][currentRoom]["items"])):
+                print("--", allAreas[currentArea][currentRoom]["items"][x][0])
             print("Paths:")
-            for x in range(len(currentArea[currentRoom]["room"][1])):
-                print("--", currentArea[currentRoom]["room"][1][x])
+            for x in range(len(allAreas[currentArea][currentRoom]["room"][1])):
+                print("--", allAreas[currentArea][currentRoom]["room"][1][x])
             print("Structures:")
-            for x in range(len(currentArea[currentRoom]["structures"])):
-                print("--", currentArea[currentRoom]["structures"][x][0])
+            for x in range(len(allAreas[currentArea][currentRoom]["structures"])):
+                print("--", allAreas[currentArea][currentRoom]["structures"][x][0])
         elif (keyword == "goto"):
             try:
                 location = playerIn[1]
-                for x in range(len(currentArea[currentRoom]["room"][1])):
-                    if (currentArea[currentRoom]["room"][1][x] == location):
-                        currentRoom = currentArea[currentRoom]["room"][1][x]
+                for x in range(len(allAreas[currentArea][currentRoom]["room"][1])):
+                    if (allAreas[currentArea][currentRoom]["room"][1][x] == location):
+                        currentRoom = allAreas[currentArea][currentRoom]["room"][1][x]
                         print("You went to", currentRoom)
                         try:
-                            if (currentArea[currentRoom]["room"][2] != None):
-                                triggerEvent(currentArea[currentRoom]["room"][2])
+                            if (allAreas[currentArea][currentRoom]["room"][2] != None):
+                                triggerEvent(allAreas[currentArea][currentRoom]["room"][2])
                         except(Exception):
                             pass
                         break
-                    if (x == len(currentArea[currentRoom]["room"][1])-1):
+                    if (x == len(allAreas[currentArea][currentRoom]["room"][1])-1):
                         print("You searched, but found no such place.")
             except(Exception):
                 print("Go to where?")
         elif (keyword == "grab"):
             try:
                 item = playerIn[1]
-                for x in range(len(currentArea[currentRoom]["items"])):
-                    if (currentArea[currentRoom]["items"][x][0] == item):
-                        inventory.append(currentArea[currentRoom]["items"][x])
-                        print(currentArea[currentRoom]["items"][x][0], "was added to your inventory!")
-                        del(currentArea[currentRoom]["items"][x])
+                for x in range(len(allAreas[currentArea][currentRoom]["items"])):
+                    if (allAreas[currentArea][currentRoom]["items"][x][0] == item):
+                        inventory.append(allAreas[currentArea][currentRoom]["items"][x])
+                        print(allAreas[currentArea][currentRoom]["items"][x][0], "was added to your inventory!")
+                        del(allAreas[currentArea][currentRoom]["items"][x])
                         break
-                    if (x == len(currentArea[currentRoom]["items"])-1):
+                    if (x == len(allAreas[currentArea][currentRoom]["items"])-1):
                         print("You searched, but found no such item.")
             except(Exception):
                 print("Grab what?")
         elif (keyword == "talkto"):
             try:
                 person = playerIn[1]
-                for x in range(len(currentArea[currentRoom]["characters"])):
-                    if (currentArea[currentRoom]["characters"][x][0] == person):
-                        print(currentArea[currentRoom]["characters"][x][0], ":", currentArea[currentRoom]["characters"][x][2])
+                for x in range(len(allAreas[currentArea][currentRoom]["characters"])):
+                    if (allAreas[currentArea][currentRoom]["characters"][x][0] == person):
+                        print(allAreas[currentArea][currentRoom]["characters"][x][0], ":", allAreas[currentArea][currentRoom]["characters"][x][2])
                         try:
-                            if (currentArea[currentRoom]["characters"][x][3] != None):
-                                triggerEvent(currentArea[currentRoom]["characters"][x][3])
+                            if (allAreas[currentArea][currentRoom]["characters"][x][3] != None):
+                                triggerEvent(allAreas[currentArea][currentRoom]["characters"][x][3])
                         except(Exception):
                             pass
                         break
-                    if (x == len(currentArea[currentRoom]["characters"])-1):
+                    if (x == len(allAreas[currentArea][currentRoom]["characters"])-1):
                         print("You searched, but were unable to find anyone by that name.")
             except(Exception):
                 print("Talk to who?")
@@ -78,16 +79,16 @@ def interact():
         elif (keyword == "inspect"):
             try:
                 structure = playerIn[1]
-                for x in range(len(currentArea[currentRoom]["structures"])):
-                    if (currentArea[currentRoom]["structures"][x][0] == structure):
-                        print(currentArea[currentRoom]["structures"][x][1])
+                for x in range(len(allAreas[currentArea][currentRoom]["structures"])):
+                    if (allAreas[currentArea][currentRoom]["structures"][x][0] == structure):
+                        print(allAreas[currentArea][currentRoom]["structures"][x][1])
                         try:
-                            if (currentArea[currentRoom]["structures"][x][2] != None):
-                                triggerEvent(currentArea[currentRoom]["structures"][x][2])
+                            if (allAreas[currentArea][currentRoom]["structures"][x][2] != None):
+                                triggerEvent(allAreas[currentArea][currentRoom]["structures"][x][2])
                         except(Exception):
                             pass
                         break
-                    if (x == len(currentArea[currentRoom]["structures"])-1):
+                    if (x == len(allAreas[currentArea][currentRoom]["structures"])-1):
                         print("You searched, but were unable to find anything by that name.")
             except(Exception):
                 print("Inspect what?")
@@ -111,47 +112,54 @@ def interact():
         print("You were too lost in thought to do anything, you consider looking for \"help\" to remember what you were doing.")
 
 def triggerEvent(eventKey):
-    global currentArea, currentRoom, inventory
-    for x in range(len(currentArea[currentRoom]["events"])):
-        if (eventKey == currentArea[currentRoom]["events"][x][0]):
-            print(currentArea[currentRoom]["events"][x][1])
-            for y in range(len(currentArea[currentRoom]["events"][x][2])):
-                action = currentArea[currentRoom]["events"][x][2][y][0]
-                location = currentArea[currentRoom]["events"][x][2][y][1]
-                key = currentArea[currentRoom]["events"][x][2][y][2]
+    global allAreas, currentArea, currentRoom, inventory
+    for x in range(len(allAreas[currentArea][currentRoom]["events"])):
+        if (eventKey == allAreas[currentArea][currentRoom]["events"][x][0]):
+            print(allAreas[currentArea][currentRoom]["events"][x][1])
+            for y in range(len(allAreas[currentArea][currentRoom]["events"][x][2])):
+                action = allAreas[currentArea][currentRoom]["events"][x][2][y][0]
+                location = allAreas[currentArea][currentRoom]["events"][x][2][y][1]
+                key = allAreas[currentArea][currentRoom]["events"][x][2][y][2]
                 if (action == "add"):
                     if (location == "inventory"):
                         inventory.append(key)
                     else:
-                        effect = currentArea[currentRoom]["events"][x][2][y][3]
+                        effect = allAreas[currentArea][currentRoom]["events"][x][2][y][3]
                         if (key == "room"):
-                            currentArea[location]["room"][1].append(effect)
+                            allAreas[currentArea][location]["room"][1].append(effect)
                         else:
-                            currentArea[location][key].append(effect)
+                            allAreas[currentArea][location][key].append(effect)
                 elif (action == "del"):
                     if (location == "inventory"):
                         for z in range(len(inventory)):
                             if (inventory[z][0] == key):
                                 del(inventory[z])
                     else:
-                        effect = currentArea[currentRoom]["events"][x][2][y][3]
+                        effect = allAreas[currentArea][currentRoom]["events"][x][2][y][3]
                         if (key == "room"):
-                            for z in range(len(currentArea[location]["room"][1])):
-                                if (currentArea[currentRoom]["room"][1][z] == effect):
-                                    del(currentArea[currentRoom]["room"][1][z])
+                            for z in range(len(allAreas[currentArea][location]["room"][1])):
+                                if (allAreas[currentArea][currentRoom]["room"][1][z] == effect):
+                                    del(allAreas[currentArea][currentRoom]["room"][1][z])
                         else:
-                            for z in range(len(currentArea[location][key])):
-                                if (currentArea[location]["room"][1][z] == effect):
-                                    del(currentArea[location]["room"][1][z])
+                            for z in range(len(allAreas[currentArea][location][key])):
+                                if (allAreas[currentArea][location]["room"][1][z] == effect):
+                                    del(allAreas[currentArea][location]["room"][1][z])
 
 def start():
-    global currentArea, currentRoom
+    global currentArea, currentRoom, allAreas
     print("\nWelcome to Text Game, type \"help\" for usable commands.\n")
-    file = open("area1.json")
-    currentArea = json.load(file)
-    currentRoom = currentArea["area"][2]
-    print("You have entered:", currentArea["area"][0])
-    print(currentArea[currentRoom]["room"][0])
+    loader = json.load(open("loader.json"))
+    for x in range(len(loader["areas"])):
+        try:
+            allAreas.append(json.load(open("areas\\" + loader["areas"][x])))
+            if (loader["areas"][x] == loader["start"]):
+                currentArea = x
+        except(Exception):
+            print(loader["areas"][x], "was not added")
+
+    currentRoom = allAreas[currentArea]["area"][2]
+    print("You have entered:", allAreas[currentArea]["area"][0])
+    print(allAreas[currentArea][currentRoom]["room"][0])
     return(0)
 
 def update():

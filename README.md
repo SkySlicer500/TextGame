@@ -2,7 +2,8 @@
 An rpg game experienced through only the text in your console.
 
 # Creating JSON Areas
-{
+{    
+
     "area": [
         "NAME OF THE AREA",
         "DESCRIPTION OF THE AREA",

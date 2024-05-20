@@ -12,7 +12,7 @@ def interact():
     try:
         keyword = playerIn[0]
         if (keyword == "help"):
-            print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninv - opens the inventory\nuse - use an item on an object")
+            print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninv - opens the inventory\nuse - use an item")
         elif (keyword == "here"):
             print(currentArea[currentRoom]["room"][0])
             print("People:")
@@ -90,20 +90,18 @@ def interact():
                 print("Inspect what?")
         elif (keyword == "use"):
             try:
-                if (playerIn[2] == "on"):
-                    if (0 == len(inventory)):
-                        print("You couldn't find any items in your inventory.")
-                    else:
-                        item = playerIn[1]
-                        event = playerIn[3]
-                        for x in range(len(inventory)):
-                            if (inventory[x][0] == item):
-                                triggerEvent(inventory[x][2])
-                                break
-                            if (x == len(inventory)-1):
-                                print("You couldn't find an item like that in your inventory.")
+                if (0 == len(inventory)):
+                    print("You couldn't find any items in your inventory.")
+                else:
+                    item = playerIn[1]
+                    for x in range(len(inventory)):
+                        if (inventory[x][0] == item):
+                            triggerEvent(inventory[x][2])
+                            break
+                        if (x == len(inventory)-1):
+                            print("You couldn't find an item like that in your inventory.")
             except(Exception):
-                print("Use what on what? That didn't seem to work...")         
+                print("Use what? That didn't seem to work...")         
         else:
             print("You were too lost in thought to do anything, you consider looking for \"help\" to remember what you were doing.")
     except(Exception):

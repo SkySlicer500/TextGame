@@ -34,7 +34,6 @@ def interact():
                     if (currentArea[currentRoom]["room"][1][x] == location):
                         currentRoom = currentArea[currentRoom]["room"][1][x]
                         print("You went to", currentRoom)
-                        print(currentArea[currentRoom]["room"][0])
                         break
                     if (x == len(currentArea[currentRoom]["room"][1])-1):
                         print("You searched, but found no such place.")

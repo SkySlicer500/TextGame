@@ -34,6 +34,11 @@ def interact():
                     if (currentArea[currentRoom]["room"][1][x] == location):
                         currentRoom = currentArea[currentRoom]["room"][1][x]
                         print("You went to", currentRoom)
+                        try:
+                            if (currentArea[currentRoom]["room"][2] != None):
+                                triggerEvent(currentArea[currentRoom]["room"][2])
+                        except(Exception):
+                            pass
                         break
                     if (x == len(currentArea[currentRoom]["room"][1])-1):
                         print("You searched, but found no such place.")
@@ -81,7 +86,6 @@ def interact():
                                 triggerEvent(currentArea[currentRoom]["structures"][x][2])
                         except(Exception):
                             pass
-                        break
                         break
                     if (x == len(currentArea[currentRoom]["structures"])-1):
                         print("You searched, but were unable to find anything by that name.")

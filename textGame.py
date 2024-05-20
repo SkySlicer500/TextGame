@@ -117,28 +117,32 @@ def triggerEvent(eventKey):
             print(currentArea[currentRoom]["events"][x][1])
             for y in range(len(currentArea[currentRoom]["events"][x][2])):
                 action = currentArea[currentRoom]["events"][x][2][y][0]
-                key = currentArea[currentRoom]["events"][x][2][y][1]
-                effect = currentArea[currentRoom]["events"][x][2][y][2]
+                location = currentArea[currentRoom]["events"][x][2][y][1]
+                key = currentArea[currentRoom]["events"][x][2][y][2]
                 if (action == "add"):
-                    if (key == "room"):
-                        currentArea[currentRoom]["room"][1].append(effect)
-                    elif (key == "inventory"):
-                        inventory.append(effect)
+                    if (location == "inventory"):
+                        inventory.append(key)
                     else:
-                        currentArea[currentRoom][key].append(effect)
+                        effect = currentArea[currentRoom]["events"][x][2][y][3]
+                        if (key == "room"):
+                            currentArea[location]["room"][1].append(effect)
+                        else:
+                            currentArea[location][key].append(effect)
                 elif (action == "del"):
-                    if (key == "room"):
-                        for z in range(len(currentArea[currentRoom]["room"][1])):
-                            if (currentArea[currentRoom]["room"][1][z] == effect):
-                                del(currentArea[currentRoom]["room"][1][z])
-                    elif (key == "inventory"):
+                    if (location == "inventory"):
                         for z in range(len(inventory)):
-                            if (inventory[z][0] == effect):
+                            if (inventory[z][0] == key):
                                 del(inventory[z])
                     else:
-                        for z in range(len(currentArea[currentRoom][key])):
-                            if (currentArea[currentRoom][key][z][0] == effect):
-                                del(currentArea[currentRoom][key][z])
+                        effect = currentArea[currentRoom]["events"][x][2][y][3]
+                        if (key == "room"):
+                            for z in range(len(currentArea[location]["room"][1])):
+                                if (currentArea[currentRoom]["room"][1][z] == effect):
+                                    del(currentArea[currentRoom]["room"][1][z])
+                        else:
+                            for z in range(len(currentArea[location][key])):
+                                if (currentArea[location]["room"][1][z] == effect):
+                                    del(currentArea[location]["room"][1][z])
 
 def start():
     global currentArea, currentRoom

@@ -155,11 +155,19 @@ def start():
             if (loader["areas"][x] == loader["start"]):
                 currentArea = x
         except(Exception):
-            print(loader["areas"][x], "was not added")
-
-    currentRoom = allAreas[currentArea]["area"][2]
-    print("You have entered:", allAreas[currentArea]["area"][0])
-    print(allAreas[currentArea][currentRoom]["room"][0])
+            try:
+                allAreas.append(json.load(open("areas/" + loader["areas"][x])))
+                if (loader["areas"][x] == loader["start"]):
+                    currentArea = x
+            except(Exception):
+                print(loader["areas"][x], "was not added")
+    try:
+        currentRoom = allAreas[currentArea]["area"][2]
+        print("You have entered:", allAreas[currentArea]["area"][0])
+        print(allAreas[currentArea][currentRoom]["room"][0])
+    except(Exception):
+        print("No area files were found")
+        return(1)
     return(0)
 
 def update():

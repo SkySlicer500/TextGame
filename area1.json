@@ -30,7 +30,8 @@
     "room2": {
         "room": [
             "There is only one person in this room, and a giant key sitting in the corner, there also appears to be a giant door with ancient symbols all over it.",
-            ["room1"]
+            ["room1"],
+            -1
         ],
 
         "characters": [

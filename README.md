@@ -23,7 +23,8 @@ Once an Area file is created name it whatever you want followed by .json and put
         "ROOM NAME": {
             "room": [
                 "ROOM DESCRIPTION",
-                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"]
+                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"],
+                (Optional Event Key)
             ],
     
             "characters": [

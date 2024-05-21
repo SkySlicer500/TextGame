@@ -28,5 +28,34 @@
   "events": [
     [0, "", [["del", "end-of-forest", "characters", "old man"], ["add", "end-of-forest", "characters", ["old man", "pag", "my name is pag, but my friends like to call me old man pag"]]]
   ]
-    [1, "gate unlocked", [[
+    [1, "gate unlocked", [["add", "end-of-forest", "room", "town-jerico"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
+  ]
+},
+  "town-jerico": {
+  "room": [
+    "",
+    ["end-of-forest", "town-jerico"]
+  ],
+
+  "characters": [
+    ["old man", "pag", "i see you've come out of the forest, not many dare to enter the forest for the lost", 0]
+  ],
+
+  "items": [
+    ["gate-key", "a very rusty key made for one purpose, opening gates", 1],
+  ],
+
+  "enemies": [],
+
+  "structures": [
+    ["entrance-gate", "giant gate to block off the enterance and exit of the forest"],
+  ],
+
+  "events": [
+    [0, "", [["del", "end-of-forest", "characters", "old man"], ["add", "end-of-forest", "characters", ["old man", "pag", "my name is pag, but my friends like to call me old man pag"]]]
+  ]
+    [1, "gate unlocked", [["add", "end-of-forest", "room", "town-jerico"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
+  ]
+},
+  
   

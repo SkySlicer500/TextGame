@@ -27,7 +27,6 @@
 
   "events": [
     [0, "", [["del", "end-of-forest", "characters", "old man"], ["add", "end-of-forest", "characters", ["old man", "pag", "my name is pag, but my friends like to call me old man pag"]]]
-  ]
     [1, "gate unlocked", [["go", "town-jerico", "room", "shop-pag"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
   ]
 },

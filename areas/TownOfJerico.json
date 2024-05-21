@@ -48,8 +48,8 @@
     ],
     
     "events": [
-      [2, "ah yes, rey, what a strong name that is", [[none]]],
-      [3, "gnunheuthreu", [[none]]]
+      [2, "ah yes, rey, what a strong name that is", [[null]]],
+      [3, "gnunheuthreu", [[null]]]
     ]
   }
 }

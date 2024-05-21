@@ -188,6 +188,30 @@ def triggerEvent(eventKey):
                             for z in range(len(allAreas[currentArea][location][key])):
                                 if (allAreas[currentArea][location][key][z][0] == effect):
                                     del(allAreas[currentArea][location][key][z])
+                elif (action == "go"):
+                    effect = allAreas[currentArea][currentRoom]["events"][x][2][y][1]
+                    try:
+                        loader = json.load(open("loader.json"))
+                        for x in range(len(loader["areas"])):
+                            try: #Try normal folder typing
+                                allAreas.append(json.load(open("areas\\" + loader["areas"][x])))
+                                if (loader["areas"][x] == effect):
+                                    currentArea = len(allAreas)-1
+                            except(Exception):
+                                try: #Try alt folder typing
+                                    allAreas.append(json.load(open("areas/" + loader["areas"][x])))
+                                    if (loader["areas"][x] == effect):
+                                        currentArea = x
+                                except(Exception):
+                                    print(loader["areas"][x], "in your loader.json was not added")
+                        try:
+                            currentRoom = allAreas[currentArea]["area"][2]
+                            print("You have entered:", allAreas[currentArea]["area"][0])
+                            print(allAreas[currentArea][currentRoom]["room"][0])
+                        except(Exception):
+                            print("No area files were found")
+                    except(Exception):
+                        print("Your loader.json file could not be found") 
 
 def start():
     global currentArea, currentRoom, allAreas

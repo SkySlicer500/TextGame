@@ -45,6 +45,7 @@ Once an Area file is created name it whatever you want followed by .json and put
                 ],
         
                 "events": [
+                        #go event type ["go", "AREA NAME"]
                     [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go", "ROOM NAME", "TYPE", "PAYLOAD"], [SECOND EVENT COMPLETE ACTION]]]
                 ]
             },

@@ -42,10 +42,14 @@
 
     "enemies": [],
 
-    "structures": ["tell-name", "do you tell the old man your name", 2],
-    ["say-nothing", "dont tell him your name and make it awkward", 3],
+    "structures": [
+      ["tell-name", "tell the old man your name", 2],
+      ["say-nothing", "dont tell him your name and make it awkward", 3]
+    ],
     
-
-    "events": [2, "ah yes, rey, what a strong name that is",
+    "events": [
+      [2, "ah yes, rey, what a strong name that is"],
+      [3, "gnunheuthreu"]
+    ]
   }
 }

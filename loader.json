@@ -1,13 +1,9 @@
 {
     "areas": [
         "BeginnerForest.json",
-    "areas": [
         "TownOfJerico.json",
-    "areas": [
         "PagsShop.json",
-    "areas": [
-        "FFTL.json",
-    
+        "FFTL.json"
     ],
 
     "start": "FFTL.json"

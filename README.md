@@ -56,10 +56,10 @@ When you want to add more areas to your game than the ones initially provided, y
 In order to do this manually you will need to follow the bellow guidelines.
 
         {
-        "areas": [
-            "AREA FILE",
-            (SECOND AREA FILE)
-        ],
-        
-        "start": "STARTING AREA FILE"
+                "areas": [
+                    "AREA FILE",
+                    (SECOND AREA FILE)
+                ],
+                
+                "start": "STARTING AREA FILE"
         }

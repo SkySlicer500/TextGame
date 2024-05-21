@@ -42,7 +42,7 @@
 
     "enemies": [],
 
-    "structures": [],
+    "structures": ["tell-name", "do you tell the old man your name"],
 
     "events": [
   }

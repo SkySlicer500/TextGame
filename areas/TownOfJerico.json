@@ -1,13 +1,13 @@
 {
   "area": [
-    "town-jerico",
-    "the town of jerico is a peacful farming, non religous, town that believes in kindness and second chances. the style of the town is very anceient aisa with one story buildings made of stone and wood.",
-    "town of jerico"
+    "lost-forest",
+    "forest for the lost is a dense dark oak forest allways covered in fog. no light ever touches the ground and the distance seems unreachable",
+    "end of forest"
   ]
 
-  "town-jerico": {
+  "end-of-forest": {
     "room": [
-      "the town of jerico is a peacful farming, non religous, town that believes in kindness and second chances. the style of the town is very anceient aisa with one story buildings made of stone and wood.",
+      "at the end of the forest for the lost, light is now visible as the trees clear and a path can now be seen running along the grass twords a town",
       ["end-of-forest", "town-jerico"]
     ],
   
@@ -26,9 +26,8 @@
     ],
   
     "events": [
-      [0, "", [["del", "end-of-forest", "characters", "old man"], ["add", "end-of-forest", "characters", ["old man", "pag", "my name is pag, but my friends like to call me old man pag"]]],
+      [0, "", [["del", "end-of-forest", "characters", "old man"], ["add", "end-of-forest"], "characters", ["old man", "pag", "my name is pag, but my friends like to call me old man pag"]]],
       [1, "gate unlocked", [["go", "town-jerico", "room", "shop-pag"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
     ]
   }
 }
-

@@ -26,8 +26,8 @@
     ],
   
     "events": [
-      [0, "", [["del", "town-jerico", "characters", "old-man"], ["add", "town-jerico", "characters", ["old-man", "pag", "thanks for opening my shop, shall we go inside"]]]],
-      [1, "pags shop has opened for the day", [["go", "town-jerico", "pags-shop"], ["del", "inventory", "shop-key"], ["del", "town-of-jerico", "structures", "shop-door"]]]
+      [0, "", [["del", "town-of-jerico", "characters", "old-man"], ["add", "town-of-jerico", "characters", ["old-man", "pag", "thanks for opening my shop, shall we go inside"]]]],
+      [1, "pags shop has opened for the day", [["go", "town-of-jerico", "pags-shop"], ["del", "inventory", "shop-key"], ["del", "town-of-jerico", "structures", "shop-door"]]]
     ]
   }
   "pags-shop": { 

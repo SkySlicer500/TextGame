@@ -106,6 +106,67 @@ def interact():
                             print("You couldn't find an item like that in your inventory.")
             except(Exception):
                 print("Use what? That didn't seem to work...")         
+        elif (keyword == "save"):
+            try:
+                name = playerIn[1]
+                try:
+                    file = open("saves\\"+name + ".json", "x")
+                    file.close()
+                except(Exception):
+                    try:
+                        file = open("saves/"+name+".json", "x")
+                        file.close()
+                    except(Exception):
+                        print("Overwriting previous save")
+                try:
+                    file = open("saves\\"+name + ".json", "w")
+                    toWrite = {
+                        "inventory": inventory,
+                        "allAreas": allAreas,
+                        "currentArea": currentArea,
+                        "currentRoom": currentRoom
+                    }
+                    json.dump(toWrite, file)
+                    file.close()
+                    print("Save was successful")
+                except(Exception):
+                    try:
+                        file = open("saves/"+name + ".json", "w")
+                        toWrite = {
+                            "inventory": inventory,
+                            "allAreas": allAreas,
+                            "currentArea": currentArea,
+                            "currentRoom": currentRoom
+                        }
+                        json.dump(toWrite, file)
+                        file.close()
+                        print("Save was successful")
+                    except(Exception):
+                        print("File failed to write")
+            except(Exception):
+                print("No name was provided for the save or the file failed to write")
+        elif (keyword == "load"):
+            try:
+                name = playerIn[1]
+                try:
+                    file = json.load(open("saves\\"+name+".json"))
+                    inventory = file["inventory"]
+                    allAreas = file["allAreas"]
+                    currentArea = file["currentArea"]
+                    currentRoom = file["currentRoom"]
+                    print("Load was successful")
+                except(Exception):
+                    try:
+                        file = json.load(open("saves/"+name+".json"))
+                        inventory = file["inventory"]
+                        allAreas = file["allAreas"]
+                        currentArea = file["currentArea"]
+                        currentRoom = file["currentRoom"]
+                        print("Load was successful")
+                    except(Exception):
+                        print("File failed to be read")
+            except(Exception):
+                print("No name was provided for the save or the file failed to be read")
         else:
             print("You were too lost in thought to do anything, you consider looking for \"help\" to remember what you were doing.")
     except(Exception):

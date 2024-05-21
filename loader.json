@@ -3,7 +3,8 @@
         "BeginnerForest.json",
         "TownOfJerico.json",
         "PagsShop.json",
-        "FFTL.json"
+        "FFTL.json",
+        
     ],
 
     "start": "FFTL.json"

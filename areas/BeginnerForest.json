@@ -22,7 +22,7 @@
   "enemies": [],
 
   "structures": [
-    ["entrance-gate", "giant gate to block off the enterance and exit of the forest", "gate-key"],
+    ["entrance-gate", "giant gate to block off the enterance and exit of the forest"],
   ],
 
   "events": [

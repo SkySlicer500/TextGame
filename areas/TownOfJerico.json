@@ -30,5 +30,8 @@
       [1, "pags shop has opened for the day", [["go", "town-jerico", "pags-shop"], ["del", "inventory", "shop-key"], ["del", "town-of-jerico", "structures", "shop-door"]]]
     ]
   }
-  "pags-shop
+  "pags-shop": { 
+     "room": [
+      "a small oak wood shop that smells of honey",
+      []
 }

@@ -1,8 +1,8 @@
 {
     "areas": [
-        "FFTL.jason",
+        "FFTL.json",
     
     ],
 
-    "start": "FFTL-start.jason"
+    "start": "FFTL-start.json"
 }

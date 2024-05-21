@@ -190,6 +190,7 @@ def triggerEvent(eventKey):
                                     del(allAreas[currentArea][location][key][z])
                 elif (action == "go"):
                     effect = allAreas[currentArea][currentRoom]["events"][x][2][y][1]
+                    roomEffect = allAreas[currentArea][currentRoom]["events"][x][2][y][2]
                     try:
                         loader = json.load(open("loader.json"))
                         for x in range(len(loader["areas"])):
@@ -205,7 +206,7 @@ def triggerEvent(eventKey):
                                 except(Exception):
                                     print(loader["areas"][x], "in your loader.json was not added")
                         try:
-                            currentRoom = allAreas[currentArea]["area"][2]
+                            currentRoom = roomEffect
                             print("You have entered:", allAreas[currentArea]["area"][0])
                             print(allAreas[currentArea][currentRoom]["room"][0])
                         except(Exception):

@@ -1,4 +1,12 @@
 {
   "area": [
-    "BeginnerForest.json",
-    "
+    "forest for the lost",
+    "forest for the lost is a dense dark oak forest allways covered in fog. no light ever touches the ground and the distance seems unreachable",
+    "end of forest"
+  ]
+
+"end of forest": {
+  "room": [
+    "at the end of the forest for the lost, light is now visible as the trees clear and a path can now be seen running along the grass twords a town",
+    ["end of forest", "town of jerico"]
+    

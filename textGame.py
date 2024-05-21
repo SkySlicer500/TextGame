@@ -205,7 +205,7 @@ def start():
                     if (loader["areas"][x] == loader["start"]):
                         currentArea = x
                 except(Exception):
-                    print(loader["areas"][x], "was not added")
+                    print(loader["areas"][x], "in your loader.json was not added")
         try:
             currentRoom = allAreas[currentArea]["area"][2]
             print("You have entered:", allAreas[currentArea]["area"][0])

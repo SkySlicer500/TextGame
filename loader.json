@@ -1,8 +1,8 @@
 {
     "areas": [
-        "Forest For The Lost",
+        "FFTL.jason",
     
     ],
 
-    "start": "Forest For The Lost"
+    "start": "FFTL-start.jason"
 }

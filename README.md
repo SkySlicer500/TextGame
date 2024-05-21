@@ -4,8 +4,7 @@ An rpg game experienced through only the text in your console.
 # Running the Game
 In order to run this game press the green "<> Code" button at the top of the page, at the bottom of the tab download the Zip folder.
 
-##Python Version
-
+## Python Version
 The python version of this game requires python to be installed in order to run. If you need to install python consult https://www.python.org/downloads/
 
 # Creating Area Files

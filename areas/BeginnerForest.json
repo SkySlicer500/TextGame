@@ -1,5 +1,5 @@
 {
-  "area": [
+  "area": [,
     "lost-forest",
     "forest for the lost is a dense dark oak forest allways covered in fog. no light ever touches the ground and the distance seems unreachable",
     "end-of-forest"
@@ -16,13 +16,13 @@
   
     "items": [
       ["gate-key", "a very rusty key made for one purpose, opening gates", 1]
-    ],
+    ]
   
     "enemies": [],
   
     "structures": [
       ["entrance-gate", "giant gate to block off the enterance and exit of the forest"]
-    ],
+    ]
   
     "events": [
       [0, "", [["del", "end-of-forest", "characters", "old man"], ["add", "end-of-forest"], "characters", ["old man", "pag", "my name is pag, but my friends like to call me old man pag"]]],

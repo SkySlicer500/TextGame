@@ -12,7 +12,8 @@
     ],
   
     "characters": [
-      ["old-man", "pag", "welcome to the town of jerico, here you will find lots boring things to do and people to talk to. but this shop over here is quite intresting. and the old man who works here is also quite intresting if you let him.", 0]
+      ["old-man", "pag", "welcome to the town of jerico, here you will find lots boring things to do and people to talk to. but this shop over here is quite intresting. \n
+        and the old man who works here is also quite intresting if you let him.", 0]
     ],
   
     "items": [

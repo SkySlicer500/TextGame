@@ -5,7 +5,8 @@ An rpg game experienced through only the text in your console.
 In order to run this game press the green "<> Code" button at the top of the page, at the bottom of the tab download the Zip folder. Extract the files from the zip folder and select which version of the game you want to play  
 <sub>The python version of this game requires the python language to be installed in order to run. If you need to install python consult https://www.python.org/downloads/</sub>
 
-# Creating Area Files
+# Modifying the Game
+## Creating Area Files
 Once an Area file is created name it whatever you want followed by .json and put the file in the areas folder. In order to load the file into the game, put it into the loader.json file.
 
         {
@@ -45,7 +46,7 @@ Once an Area file is created name it whatever you want followed by .json and put
     
         "SECOND ROOM": {SECOND ROOM}
     }
-# Configuring loader.json
+## Configuring loader.json
 When you want to add more areas to your game than the ones initially provided, you will need to configure the loader to recognize the new packages.
 In order to do this manually you will need to follow the bellow guidelines.
 

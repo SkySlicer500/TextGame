@@ -35,15 +35,17 @@
       ],
 
     "characters": [
-      ["old-man", "pag", "I hope you are enjoing this town so far and all it has to offer. I dont think ive asked you your name yet, how very rude of me.", 2]
+      ["old-man", "pag", "I hope you are enjoing this town so far and all it has to offer. I dont think ive asked you your name yet, how very rude of me."]
     ],
 
     "items": [],
 
     "enemies": [],
 
-    "structures": ["tell-name", "do you tell the old man your name"],
+    "structures": ["tell-name", "do you tell the old man your name", 2],
+    ["say-nothing", "dont tell him your name and make it awkward", 3],
+    
 
-    "events": [
+    "events": [2, "ah yes, rey, what a strong name that is",
   }
 }

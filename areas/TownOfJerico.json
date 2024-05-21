@@ -30,7 +30,20 @@
   }
   "pags-shop": { 
      "room": [
-      "a small oak wood log cabin style shop that smells of honey",
-      ]
+      "a small oak cabin that smells of honey", 
+       []
+      ],
+
+    "characters": [
+      ["old-man", "pag", "I hope you are enjoing this town so far and all it has to offer. I dont think ive asked you your name yet, how very rude of me.", 2]
+    ],
+
+    "items": [],
+
+    "enemies": []
+
+    "structures": [],
+
+    "events": [
   }
 }

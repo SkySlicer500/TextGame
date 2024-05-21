@@ -30,3 +30,4 @@
     [1, "gate unlocked", [["go", "town-jerico", "room", "shop-pag"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
   ]
 }
+}

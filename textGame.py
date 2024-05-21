@@ -109,40 +109,23 @@ def interact():
         elif (keyword == "save"):
             try:
                 name = playerIn[1]
+                file = 0
                 try:
-                    file = open("saves/"+name+".json", "x")
-                    file.close()
+                    file = open("saves/"+name + ".json", "w")
                 except(Exception):
                     try:
-                        file = open("saves\\"+name + ".json", "x")
-                        file.close()
+                        file = open("saves\\"+name + ".json", "w")
                     except(Exception):
-                        print("Overwriting previous save")
-                try:
-                    file = open("saves\\"+name + ".json", "w")
-                    toWrite = {
-                        "inventory": inventory,
-                        "allAreas": allAreas,
-                        "currentArea": currentArea,
-                        "currentRoom": currentRoom
-                    }
-                    json.dump(toWrite, file)
-                    file.close()
-                    print("Save was successful")
-                except(Exception):
-                    try:
-                        file = open("saves/"+name + ".json", "w")
-                        toWrite = {
-                            "inventory": inventory,
-                            "allAreas": allAreas,
-                            "currentArea": currentArea,
-                            "currentRoom": currentRoom
-                        }
-                        json.dump(toWrite, file)
-                        file.close()
-                        print("Save was successful")
-                    except(Exception):
-                        print("File failed to write")
+                        print("File failed to open")
+                toWrite = {
+                    "inventory": inventory,
+                    "allAreas": allAreas,
+                    "currentArea": currentArea,
+                    "currentRoom": currentRoom
+                }
+                json.dump(toWrite, file)
+                file.close()
+                print("Save was successful")
             except(Exception):
                 print("No name was provided for the save or the file failed to write")
         elif (keyword == "load"):

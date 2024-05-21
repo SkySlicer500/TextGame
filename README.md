@@ -8,7 +8,7 @@ In order to run this game press the green "<> Code" button at the top of the pag
 # Modifying the Game
 For those who wish to modify the content of the game, examples of how area files and the loader file should be organized are provided bellow. You can compare these templates to the already existing files in the areas folder above to help better understand how the files should be created. Since these files do not need to be compiled you do not need specialized software to edit them and they can be edited within a basic text editor such as notepad.
 ## Creating Area Files
-Once an Area file is created name it whatever you want followed by .json and put the file in the areas folder. In order to load the file into the game, put it into the loader.json file.
+Once an Area file is created name it whatever you want followed by .json and put the file in the areas folder. In order to load the file into the game, add it to the loader.json file in the bellow instructions.
 
         {
             "area": [

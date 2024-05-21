@@ -2,8 +2,11 @@
 An rpg game experienced through only the text in your console.
 
 # Running the Game
-In order to run this game press the green "<> Code" button at the top of the page, at the bottom of the tab download the Zip folder. Extract the files from the zip folder and select which version of the game you want to play  
+In order to run this game press the green "<> Code" button at the top of the page, at the bottom of the tab download the Zip folder. Extract the files from the zip folder and select which version of the game you want to play
+## Python Version
 <sub>The python version of this game requires the python language to be installed in order to run. If you need to install python consult https://www.python.org/downloads/</sub>
+## Modified Content
+When downloading content meant to be a modification to this game only download files with the .json suffix that are intended to be new areas for you to explore. Files of other types are not recommended as they can potentially contain malware. It is also important to remember that when downloading any files off of the internet, you do so at your own risk.
 
 # Modifying the Game
 For those who wish to modify the content of the game, examples of how area files and the loader file should be organized are provided bellow. You can compare these templates to the already existing files in the areas folder above to help better understand how the files should be created. Since these files do not need to be compiled you do not need specialized software to edit them and they can be edited within a basic text editor such as notepad.

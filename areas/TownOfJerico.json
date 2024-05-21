@@ -1,34 +1,33 @@
 {
   "area": [
-    "lost-forest",
+    "town-jericot",
     "forest for the lost is a dense dark oak forest allways covered in fog. no light ever touches the ground and the distance seems unreachable",
-    "end of forest",
-    [],
-  ]
+    "end-of-forest"
+  ],
 
   "end-of-forest": {
     "room": [
       "at the end of the forest for the lost, light is now visible as the trees clear and a path can now be seen running along the grass twords a town",
-      ["end-of-forest", "town-jerico"]
+      []
     ],
   
     "characters": [
-      ["old man", "pag", "i see you've come out of the forest, not many dare to enter the forest for the lost", 0]
+      ["old-man", "pag", "i see you've come out of the forest, not many dare to enter the forest for the lost", 0]
     ],
   
     "items": [
-      ["gate-key", "a very rusty key made for one purpose, opening gates", 1],
+      ["gate-key", "a very rusty key made for one purpose, opening gates", 1]
     ],
   
     "enemies": [],
   
     "structures": [
-      ["entrance-gate", "giant gate to block off the enterance and exit of the forest"],
+      ["entrance-gate", "giant gate to block off the enterance and exit of the forest"]
     ],
   
     "events": [
-      [0, "", [["del", "end-of-forest", "characters", "old man"], ["add", "end-of-forest"], "characters", ["old man", "pag", "my name is pag, but my friends like to call me old man pag"]]],
-      [1, "gate unlocked", [["go", "town-jerico", "room", "shop-pag"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
+      [0, "", [["del", "end-of-forest", "characters", "old-man"], ["add", "end-of-forest", "characters", ["old-man", "pag", "my name is pag, but my friends like to call me old man pag"]]]],
+      [1, "gate unlocked", [["go", "town-jerico", "shop-pag"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
     ]
   }
 }

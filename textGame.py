@@ -154,7 +154,7 @@ def start():
             try: #Try normal folder typing
                 allAreas.append(json.load(open("areas\\" + loader["areas"][x])))
                 if (loader["areas"][x] == loader["start"]):
-                    currentArea = x
+                    currentArea = len(allAreas)-1
             except(Exception):
                 try: #Try alt folder typing
                     allAreas.append(json.load(open("areas/" + loader["areas"][x])))

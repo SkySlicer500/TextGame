@@ -16,7 +16,7 @@
     ],
   
     "items": [
-      ["store-key", "a key which holds many fond memories of opening this shop", 1]
+      ["shop-key", "a key which holds many fond memories of opening this shop", 1]
     ],
   
     "enemies": [],

@@ -55,11 +55,11 @@ Once an Area file is created name it whatever you want followed by .json and put
 When you want to add more areas to your game than the ones initially provided, you will need to configure the loader to recognize the new packages.
 In order to do this manually you will need to follow the bellow guidelines.
 
-    {
+        {
         "areas": [
             "AREA FILE",
             (SECOND AREA FILE)
         ],
-    
+        
         "start": "STARTING AREA FILE"
-    }
+        }

@@ -110,11 +110,11 @@ def interact():
             try:
                 name = playerIn[1]
                 try:
-                    file = open("saves\\"+name + ".json", "x")
+                    file = open("saves/"+name+".json", "x")
                     file.close()
                 except(Exception):
                     try:
-                        file = open("saves/"+name+".json", "x")
+                        file = open("saves\\"+name + ".json", "x")
                         file.close()
                     except(Exception):
                         print("Overwriting previous save")

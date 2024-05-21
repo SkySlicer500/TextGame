@@ -12,22 +12,22 @@
     ],
   
     "characters": [
-      ["old-man", "pag", "welcome to the town of jerico, here you will find lots boring things to do and people to talk to. but this shop over here is quite intresting. and the old man who works here is also quite intresting if you let him.", 0]
+      ["old-man", "pag", "welcome to the town of jerico, here you will find lots boring things to do and people to talk to. but this shop over here is quite intresting. and the old man who works here is also quite intresting if you let him. ", 0]
     ],
   
     "items": [
-      ["gate-key", "a very rusty key made for one purpose, opening gates", 1]
+      ["store-key", "a key which holds many fond memories of opening this shop", 1]
     ],
   
     "enemies": [],
   
     "structures": [
-      ["entrance-gate", "giant gate to block off the enterance and exit of the forest"]
+      ["shop-door", "a doorway to the magical place of discounted items"]
     ],
   
     "events": [
-      [0, "", [["del", "end-of-forest", "characters", "old-man"], ["add", "end-of-forest", "characters", ["old-man", "pag", "my name is pag, but my friends like to call me old man pag"]]]],
-      [1, "gate unlocked", [["go", "town-jerico", "shop-pag"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
+      [0, "", [["del", "town-jerico", "characters", "old-man"], ["add", "town-jerico", "characters", ["old-man", "pag", "thanks for opening my shop, shall we go inside"]]]],
+      [1, "pags shop has opened for the day", [["go", "town-jerico", "pags-shop"], ["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"]]]
     ]
   }
 }

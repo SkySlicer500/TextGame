@@ -299,7 +299,6 @@ def start():
     return(0)
 
 def update():
-    print(len(allAreas[currentArea][currentRoom]["enemies"]))
     if (len(allAreas[currentArea][currentRoom]["enemies"]) > 0):
         combat()
     else:

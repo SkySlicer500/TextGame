@@ -33,7 +33,7 @@ Once an Area file is created name it whatever you want followed by .json and put
                 ],
         
                 "items": [
-                    ["ITEM NAME", "ITEM DESCRIPTION", (OPTIONAL EVENT KEY)],
+                    ["ITEM NAME", "ITEM DESCRIPTION", ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
                     (SECOND ITEM)
                 ],
         

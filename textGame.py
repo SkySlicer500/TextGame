@@ -13,7 +13,7 @@ def interact():
     try:
         keyword = playerIn[0]
         if (keyword == "help"):
-            print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninv - opens the inventory\nuse - use an item\nsave - save to a save file\nload - load from a save file")
+            print("here - observe your current surroundings\ngoto - go to a different room\ngrab - pickup an item that you find in a room\ntalkto - have a conversation with someone in a room\ninspect - inspects a specified structure\ninv - opens the inventory\nuse - use an item\nsave - save to a save file\nload - load from a save file")
         elif (keyword == "here"):
             print(allAreas[currentArea][currentRoom]["room"][0])
             print("People:")

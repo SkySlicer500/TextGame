@@ -48,8 +48,8 @@
     ],
     
     "events": [
-      [2, "ah yes, rey, what a strong name that is... \n a scream is heard outside", ["add", "pags-shop", "room", "town-square"], [null, null]],
-      [3, "ok then, no worries take your time... \n a scream is heard outside", ["add", "pags-shop", "room", "town-square"], [null, null]],
+      [2, "ah yes, rey, what a strong name that is... \n a scream is heard outside", ["add", "pags-shop", "room", "town-square"], ]],
+      [3, "ok then, no worries take your time... \n a scream is heard outside", ["add", "pags-shop", "room", "town-square"], ]],
     ]
   },
   "town-square": {

@@ -1,9 +1,10 @@
-import json
+import json, random
 
 inventory = []
 allAreas = []
 currentArea = 0
 currentRoom = ""
+maxHealth = 100
 
 def interact():
     global allAreas, currentArea, currentRoom, inventory
@@ -100,7 +101,7 @@ def interact():
                     item = playerIn[1]
                     for x in range(len(inventory)):
                         if (inventory[x][0] == item):
-                            triggerEvent(inventory[x][2])
+                            triggerEvent(inventory[x][4])
                             break
                         if (x == len(inventory)-1):
                             print("You couldn't find an item like that in your inventory.")
@@ -205,6 +206,69 @@ def triggerEvent(eventKey):
                     except(Exception):
                         print("Your loader.json file could not be found") 
 
+def combat():
+    enemy = allAreas[currentArea][currentRoom]["enemies"][0]
+    health = maxHealth
+    enemyHealth = enemy[2]
+    while(enemyHealth > 0 and health > 0):
+        enemyTempAttack = enemy[3]
+        playerAttack = 0
+        playerTempAttack = 0
+        print("\nYou are being attacked by a " + enemy[0] + "!\nHealth: "+str(enemyHealth)+"\n\nHealth: " + str(health) + "\na - Attack\nb - Block")
+        playerIn = input()
+        mode = 0
+        if (playerIn == "a" or playerIn == "Attack" or playerIn == "attack"):
+            mode = 1
+            print("What will you attack with? (Type Item Name)\n", inventory)
+        elif (playerIn == "b" or playerIn == "Block" or playerIn == "block"):
+            mode = 2
+            print("What will you block with? (Type Item Name)\n", inventory)
+        else:
+            print("You were too confused to do anything!")
+        playerIn = input()
+        for x in range(len(inventory)):
+            if (playerIn == inventory[x][0]):
+                playerAttack = inventory[x][2]
+                playerTempAttack = playerAttack
+                if (playerTempAttack >= enemy[4]):
+                    playerTempAttack -= enemy[4]
+                else:
+                    playerTempAttack = 0
+
+                if (enemyTempAttack >= inventory[x][3]):
+                    enemyTempAttack -= inventory[x][3]
+                else:
+                    enemyTempAttack = 0
+            else:
+                print("You fumbled your items!")
+
+            enemyIn = random.randrange(0, 1)
+            if (enemyIn == 0):
+                if (mode == 1):
+                    health -= enemy[3]
+                    enemyHealth -= playerAttack
+                    print("The", enemy[0], "did", enemy[3], "damage!")
+                    print("You did", playerAttack, "damage!")
+                elif (mode == 2):
+                    health -= enemyTempAttack
+                    print("You blocked! The", enemy[0], "only did", enemyTempAttack, "damage!")
+            else:
+                if (mode == 1):
+                    enemyHealth -= playerTempAttack
+                    print("The", enemy[0], "blocked! You only did", playerTempAttack, "damage!")
+                elif (mode == 2):
+                    print("Both sides blocked nothing!")
+    if (enemyHealth <= 0):
+        print("You destroyed the", enemy[0] + "!")
+        try:
+            if (allAreas[currentArea][currentRoom]["enemies"][0][5] != None):
+                triggerEvent(allAreas[currentArea][currentRoom]["enemies"][0][5])
+        except(Exception):
+            pass
+        del(allAreas[currentArea][currentRoom]["enemies"][0])
+    else:
+        print("Prepare yourself! The", enemy[0], "is coming again!")
+
 def start():
     global currentArea, currentRoom, allAreas
     print("\nWelcome to Text Game, type \"help\" for usable commands.\n")
@@ -235,7 +299,10 @@ def start():
     return(0)
 
 def update():
-    interact()
+    if (len(allAreas[currentArea][currentRoom]["enemies"]) > 0):
+        combat()
+    else:
+        interact()
     return(0)
 
 def end(errorCode):

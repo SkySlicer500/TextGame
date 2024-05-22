@@ -8,7 +8,7 @@
   "town-of-jerico": {
     "room": [
       "a busy street full of venders and towns people going about their buisness, pags shop is around the corner",
-      ["town-square"]
+      []
     ],
   
     "characters": [
@@ -31,7 +31,7 @@
   "pags-shop": { 
      "room": [
       "a small oak cabin that smells of honey", 
-       []
+       ["town-square"]
       ],
 
     "characters": [
@@ -51,5 +51,11 @@
       [2, "ah yes, rey, what a strong name that is... \n a scream is heard outside", ["go", "town-of-jerico", "town-square"], [null, null]],
       [3, "ok then, no worries take your time... \n a scream is heard outside", ["go", "town-of-jerico", "town-square"], [null, null]],
     ]
-  }
+  },
+  "town-square": {
+    "room": [
+      "the scream came from a little girl that has been knocked over by a knight",
+      [],
+    ],
+    "characters": ["mystery", "knight", "
 }

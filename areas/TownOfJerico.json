@@ -50,7 +50,7 @@
     "events": [
       [2, "ah yes, rey, what a strong name that is", 7, [[null, null, null]]],
       [3, "gnunheuthreu", 7, [[null, null, null]]],
-      [7, "a scream is here outside", [[null, null, null]]]
+      [7, "a scream is heard outside", [[null, null, null]]]
     ]
   }
 }

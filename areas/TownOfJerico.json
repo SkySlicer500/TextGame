@@ -12,7 +12,7 @@
     ],
   
     "characters": [
-      ["old-man", "pag", "welcome to the town of jerico, here you will find lots boring things to do and people to talk to. but this shop over here is quite intresting. and the old man who works here is also quite intresting if you let him. ", 0]
+      ["old-man", "pag", "welcome to the town of jerico, here you will find lots boring things to do and people to talk to. but this shop over here is quite intresting. and the old man who works here is also quite intresting if you let him. ", 5]
     ],
   
     "items": [],
@@ -24,8 +24,8 @@
     ],
   
     "events": [
-      [0, "", [["del", "town-of-jerico", "characters", "old-man"], ["add", "town-of-jerico", "characters", ["old-man", "pag", "thanks for opening my shop, shall we go inside"]], ["add", "inventory", ["shop-key", "a key which holds many fond memories of opening this shop", 1]]]],
-      [1, "pags shop has opened for the day", [["add", "town-of-jerico", "room", "pags-shop"], ["del", "inventory", "shop-key"], ["del", "town-of-jerico", "structures", "shop-door"]]]
+      [5, "", [["del", "town-of-jerico", "characters", "old-man"], ["add", "town-of-jerico", "characters", ["old-man", "pag", "thanks for opening my shop, shall we go inside"]], ["add", "inventory", ["shop-key", "a key which holds many fond memories of opening this shop", 6]]]],
+      [6, "pags shop has opened for the day", [["add", "town-of-jerico", "room", "pags-shop"], ["del", "inventory", "shop-key"], ["del", "town-of-jerico", "structures", "shop-door"]]]
     ]
   },
   "pags-shop": { 

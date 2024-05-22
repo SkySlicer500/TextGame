@@ -192,19 +192,23 @@ def triggerEvent(eventKey):
                     effect = allAreas[currentArea][currentRoom]["events"][x][2][y][1]
                     roomEffect = allAreas[currentArea][currentRoom]["events"][x][2][y][2]
                     try:
-                        loader = json.load(open("loader.json"))
-                        for x in range(len(loader["areas"])):
-                            try: #Try normal folder typing
-                                allAreas.append(json.load(open("areas\\" + loader["areas"][x])))
-                                if (loader["areas"][x] == effect):
-                                    currentArea = len(allAreas)-1
-                            except(Exception):
-                                try: #Try alt folder typing
-                                    allAreas.append(json.load(open("areas/" + loader["areas"][x])))
-                                    if (loader["areas"][x] == effect):
-                                        currentArea = x
-                                except(Exception):
-                                    print(loader["areas"][x], "in your loader.json was not added")
+                        #loader = json.load(open("loader.json"))
+                        #for x in range(len(loader["areas"])):
+                        #    try: #Try normal folder typing
+                        #        allAreas.append(json.load(open("areas\\" + loader["areas"][x])))
+                        #        if (loader["areas"][x] == effect):
+                        #            currentArea = len(allAreas)-1
+                        #    except(Exception):
+                        #        try: #Try alt folder typing
+                        #            allAreas.append(json.load(open("areas/" + loader["areas"][x])))
+                        #            if (loader["areas"][x] == effect):
+                        #                currentArea = len(allAreas)-1
+                        #        except(Exception):
+                        #            print(loader["areas"][x], "in your loader.json was not added")
+                        for x in range(len(allAreas)):
+                            if (allAreas[x]["area"][0] == effect):
+                                currentArea = x
+                                break
                         try:
                             currentRoom = roomEffect
                             print("You have entered:", allAreas[currentArea]["area"][0])

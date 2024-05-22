@@ -37,7 +37,10 @@ Once an Area file is created name it whatever you want followed by .json and put
                     (SECOND ITEM)
                 ],
         
-                "enemies": [],
+                "enemies": [
+                        ["ENEMY NAME", "ENEMY DESCRIPTION", HEALTH VALUE, ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
+                        (SECOND ENEMY)
+                ],
         
                 "structures": [
                     ["STRUCTURE NAME", "STRUCTURE DESCRIPTION", (OPTIONAL EVENT KEY)],

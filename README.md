@@ -33,7 +33,8 @@ Once an Area file is created name it whatever you want followed by .json and put
                 ],
         
                 "items": [
-                    ["ITEM NAME", "ITEM DESCRIPTION", ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
+                        #Neither "on-grab" or "on-use" need to be implemented
+                    ["ITEM NAME", "ITEM DESCRIPTION", ATTACK VALUE, DEFENSE VALUE, {"on-grab": (OPTIONAL EVENT KEY), "on-use": (OPTIONAL EVENT KEY)}],
                     (SECOND ITEM)
                 ],
         

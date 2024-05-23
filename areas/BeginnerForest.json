@@ -17,7 +17,7 @@
   
     "items": [
       ["gate-key", "a very rusty key made for one purpose, opening gates", 0, 0, 1],
-      ["wood-sword", "basicly a stick with a handle", 5, 10, 9, 1]
+      ["wood-sword", "basicly a stick with a handle", 5, 10, 9]
     ],
   
     "enemies": [],

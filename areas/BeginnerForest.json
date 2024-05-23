@@ -16,10 +16,14 @@
     ],
   
     "items": [
-      ["gate-key", "a very rusty key made for one purpose, opening gates", 0, 0, 1]
+      ["gate-key", "a very rusty key made for one purpose, opening gates", 0, 0, 1],
+      ["wood-sword", "basicly a stick with a handle", 5, 10, 1]
     ],
   
-    "enemies": [],
+    "enemies": [
+            ["wolf-1", "intense but suprisingly pretty weak", 10, 40, 40],
+            ["wolf-2", "intense but suprisingly pretty weak", 10, 40, 40]
+    ],
   
     "structures": [
       ["entrance-gate", "giant gate to block off the enterance and exit of the forest"]

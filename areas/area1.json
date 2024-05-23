@@ -17,14 +17,16 @@
         ],
 
         "items": [
-            ["Wood-Sword", "Not very strong, but it works", 100, 0]
+            ["Wood-Sword", "Not very strong, but it works", 100, 0, {"on-grab": 0}]
         ],
 
         "enemies": [],
 
         "structures": [],
 
-        "events": []
+        "events": [
+            [0, "GOBLIN", [["add", "room1", "enemies", ["Goblin", "Very Menacing", 70, 40, 40]]]]
+        ]
     },
 
     "room2": {
@@ -39,7 +41,7 @@
         ],
 
         "items": [
-            ["Big-Key", "Too large to fit into any lock you've ever seen.", 0, 0, 0]
+            ["Big-Key", "Too large to fit into any lock you've ever seen.", 0, 0, {"on-use": 0}]
         ],
 
         "enemies": [

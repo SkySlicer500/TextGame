@@ -210,6 +210,16 @@ def triggerEvent(eventKey):
                             print("No area files were found")
                     except(Exception):
                         print("Your loader.json file could not be found") 
+                elif (action == "mod"):
+                    for z in range(len(inventory)):
+                        if (location == inventory[z][0]):
+                            if (allAreas[currentArea][currentRoom]["events"][x][2][y][3] == "pre"): #Prefix
+                                inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] = inventory[x][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] + allAreas[currentArea][currentRoom]["events"][x][2][y][4]
+                            elif (allAreas[currentArea][currentRoom]["events"][x][2][y][3] == "suf"): #Suffix
+                                inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] = allAreas[currentArea][currentRoom]["events"][x][2][y][4] + inventory[x][allAreas[currentArea][currentRoom]["events"][x][2][y][2]]
+                            elif (allAreas[currentArea][currentRoom]["events"][x][2][y][3] == "alt"): #Alter
+                                inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] = allAreas[currentArea][currentRoom]["events"][x][2][y][4]
+                            break
 
 def combat():
     enemy = allAreas[currentArea][currentRoom]["enemies"][0]

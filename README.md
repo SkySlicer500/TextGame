@@ -49,9 +49,15 @@ Once an Area file is created name it whatever you want followed by .json and put
                 ],
         
                 "events": [
+                        #add/del event type ["add/del", "ROOM NAME", "TYPE", "PAYLOAD"]
                         #go event type ["go", "AREA NAME", "ROOM NAME"]
                         #inventory Room Name ["add/del", "inventory", "PAYLOAD"]
-                    [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go", "ROOM NAME", "TYPE", "PAYLOAD"], [SECOND EVENT COMPLETE ACTION]]],
+                        #mod event type ["mod", "ITEM NAME", ITEM VARIABLE INDEX, "pre/suf/alt", CHANGE/"CHANGE"]
+                                #pre will add the change before the original
+                                #suf will add the change after the original
+                                #alt will completely replace the original
+                                #If using numbers instead of strings pre or suf will add the numbers together and alt will replace it
+                    [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go/mod", "ROOM NAME", "TYPE", "PAYLOAD"], [SECOND EVENT COMPLETE ACTION]]],
                     (SECOND EVENT)
                 ]
             },

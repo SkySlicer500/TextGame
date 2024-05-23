@@ -29,7 +29,7 @@
     "events": [
       [0, "", [["del", "end-of-forest", "characters", "old-man"], ["add", "end-of-forest", "characters", ["old-man", "pag", "my name is pag, but my friends like to call me old man pag"]]]],
       [1, "gate unlocked", [["del", "inventory", "gate-key"], ["del", "end-of-forest", "structures", "entrance-gate"], ["go", "town-jerico", "town-of-jerico"]]],
-      [9, "wolfs have entered the area", [["add", "enemies", ["wolf-1", "intense but suprisingly pretty weak", 10, 40, 40], ["wolf-2", "intense but suprisingly pretty weak", 10, 40, 40]]]]
+      [9, "wolfs have entered the area", [["add", "end-of-forest", "enemies", ["wolf-1", "intense but suprisingly pretty weak", 10, 40, 40], ["wolf-2", "intense but suprisingly pretty weak", 10, 40, 40]]]]
     ]
   }
 }

@@ -25,7 +25,8 @@
         "structures": [],
 
         "events": [
-            [0, "GOBLIN", [["add", "room1", "enemies", ["Goblin", "Very Menacing", 70, 40, 40]]]]
+            [0, "GOBLIN", [["add", "room1", "enemies", ["Goblin", "Very Menacing", 70, 40, 40, 1]]]],
+            [1, "Modify Wood-Sword", [["mod", "Wood-Sword", 2, "pre", 50]]]
         ]
     },
 

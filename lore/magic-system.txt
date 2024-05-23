@@ -4,14 +4,7 @@ first consept: electric system
 -shoot eletric spells from your palms with the help of chants (what you type in. ex: "stun" will stun an opponent)
 
 
-second consept: chaose consumption 
--based off rage and adreniline
--entering chaose mode (type "cm") will increase all states
--to fill chaose meter you have to do certin actions that being...
+second consept: 
 
 
-third consept: nuke magic
--type "explode" to heavily damage enemys
--type "fission" to insta kill weaker enemys
--type "rad" to poison enemys/ damage over time
--type "fuse" to steal health from enemys
+third consept: 

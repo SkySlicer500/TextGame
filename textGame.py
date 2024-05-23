@@ -53,6 +53,11 @@ def interact():
                     if (allAreas[currentArea][currentRoom]["items"][x][0] == item):
                         inventory.append(allAreas[currentArea][currentRoom]["items"][x])
                         print(allAreas[currentArea][currentRoom]["items"][x][0], "was added to your inventory!")
+                        try:
+                            if (allAreas[currentArea][currentRoom]["items"][x][4]["on-grab"] != None):
+                                triggerEvent(allAreas[currentArea][currentRoom]["items"][x][4]["on-grab"])
+                        except(Exception):
+                            pass
                         del(allAreas[currentArea][currentRoom]["items"][x])
                         break
                     if (x == len(allAreas[currentArea][currentRoom]["items"])-1):
@@ -101,7 +106,7 @@ def interact():
                     item = playerIn[1]
                     for x in range(len(inventory)):
                         if (inventory[x][0] == item):
-                            triggerEvent(inventory[x][4])
+                            triggerEvent(inventory[x][4]["on-use"])
                             break
                         if (x == len(inventory)-1):
                             print("You couldn't find an item like that in your inventory.")

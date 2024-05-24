@@ -57,7 +57,7 @@ Once an Area file is created name it whatever you want followed by .json and put
                                 #suf will add the change after the original
                                 #alt will completely replace the original
                                 #If using numbers instead of strings pre or suf will add the numbers together and alt will replace it
-                    [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go/mod", "ROOM NAME", "TYPE", "PAYLOAD"], [SECOND EVENT COMPLETE ACTION]]],
+                    [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go/mod", "ROOM NAME", "TYPE", "PAYLOAD"], [OPTIONAL SECOND EVENT COMPLETE ACTION]]],
                     (SECOND EVENT)
                 ]
             },

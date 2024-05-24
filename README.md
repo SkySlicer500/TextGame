@@ -50,8 +50,8 @@ Once an Area file is created name it whatever you want followed by .json and put
         
                 "events": [
                         #add/del event type ["add/del", "ROOM NAME", "TYPE", "PAYLOAD"]
+                                #inventory Room Name ["add/del", "inventory", "PAYLOAD"]
                         #go event type ["go", "AREA NAME", "ROOM NAME"]
-                        #inventory Room Name ["add/del", "inventory", "PAYLOAD"]
                         #mod event type ["mod", "ITEM NAME", ITEM VARIABLE INDEX, "pre/suf/alt", CHANGE/"CHANGE"]
                                 #pre will add the change before the original
                                 #suf will add the change after the original

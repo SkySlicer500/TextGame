@@ -5,7 +5,8 @@ An rpg game experienced through only the text in your console.
 In order to run this game press the green "<> Code" button at the top of the page, at the bottom of the tab download the Zip folder. Extract the files from the zip folder and select which version of the game you want to play
 ## Python Version
 The python version of this game requires the python language to be installed in order to run. If you need to install python consult https://www.python.org/downloads/  
-Open a terminal window and navigate to the folder containing the textGame.py file, then run "python textGame.py"
+Open a terminal window and navigate to the folder containing the textGame.py file, then run "python textGame.py".  
+An easy way to navigate to the folder in the terminal is to first navigate to the folder in the file explorer and right click the folder and open a terminal. From here run "python textGame.py".
 ## Modified Content Disclaimer
 When downloading content meant to be a modification to this game only download files with the .json suffix that are intended to be new areas for you to explore. Files of other types are not recommended as they are not designed to work with this game and can potentially contain malware. It is also important to remember that when downloading any files off of the internet, you do so at your own risk.
 

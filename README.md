@@ -77,4 +77,5 @@ In order to do this manually you will need to follow the bellow guidelines. You 
                 ],
                 
                 "start": "STARTING AREA FILE"
-        }
+        }  
+If you want to easily modify the loader.json with the proper syntax, run the loaderConfig.py file the same way you would run the game. The commands for it are, add [FILENAME] / del [FILENAME] / start [FILENAME] / end, for more details check loaderConfig.py

@@ -10,6 +10,13 @@ An easy way to navigate to the folder in the terminal is to first navigate to th
 ## Modified Content Disclaimer
 When downloading content meant to be a modification to this game only download files with the .json suffix that are intended to be new areas for you to explore. Files of other types are not recommended as they are not designed to work with this game and can potentially contain malware. It is also important to remember that when downloading any files off of the internet, you do so at your own risk.
 
+# Playing the Game
+Once the game is up and running you have several commands that you can run, the full list can be found by using the "help" command in game.
+## Main Game
+Here you will use standard commands such as "here" and "use" to help you explore and interact with the world arround you
+## Combat
+When you wnter a room with an enemy in it you will enter the combat state. If you are unprepared for combat, this can lead to devestating consequences. In the combat state you can either Attack or Block, when attacking you take the full force of the enemy's attack if they attack, but you also deal damage to the enemy. If you block, then you take reduced damage depending on the defense value of your shield. All items have an attack and defense value and you can use any item during combat. The attack stat is how much the item will deal when attacking your opponent and the defense stat is how much damage you repel when blocking an incoming attack. Every turn you have to select an item to use to either attack or block, to select an item, type the item's name as listed.
+
 # Modifying the Game
 For those who wish to modify the content of the game, examples of how area files and the loader file should be organized are provided bellow. You can compare these templates to the already existing files in the areas folder above to help better understand how the files should be created. Since these files do not need to be compiled you do not need specialized software to edit them and they can be edited within a basic text editor such as notepad.
 ## Creating Area Files

@@ -13,9 +13,11 @@ When downloading content meant to be a modification to this game only download f
 # Playing the Game
 Once the game is up and running you have several commands that you can run, the full list can be found by using the "help" command in game.
 ## Main Game
-Here you will use standard commands such as "here" and "use" to help you explore and interact with the world arround you
+Here you will use standard commands such as "here" and "use" to help you explore and interact with the world arround you. During exploration you can inspect structures, grab and use items, and talk to people.
 ## Combat
 When you wnter a room with an enemy in it you will enter the combat state. If you are unprepared for combat, this can lead to devestating consequences. In the combat state you can either Attack or Block, when attacking you take the full force of the enemy's attack if they attack, but you also deal damage to the enemy. If you block, then you take reduced damage depending on the defense value of your shield. All items have an attack and defense value and you can use any item during combat. The attack stat is how much the item will deal when attacking your opponent and the defense stat is how much damage you repel when blocking an incoming attack. Every turn you have to select an item to use to either attack or block, to select an item, type the item's name as listed.
+## Creating a Save File
+Once you have made decent progress through the game, you may wish to leave and continue later. You are able to save your current progress to a file so that it can be loaded later. When you return to the program you can then use the load command in order to restore your game to where you left off. The relative commands are: save [FILE NAME] and load [FILE NAME], there is no limit to how many files you can save to  except for the available space on your hard drive.
 
 # Modifying the Game
 For those who wish to modify the content of the game, examples of how area files and the loader file should be organized are provided bellow. You can compare these templates to the already existing files in the areas folder above to help better understand how the files should be created. Since these files do not need to be compiled you do not need specialized software to edit them and they can be edited within a basic text editor such as notepad.

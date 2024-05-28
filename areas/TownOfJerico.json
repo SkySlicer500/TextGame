@@ -35,10 +35,10 @@
       ],
 
     "characters": [
-      ["old-man", "pag", "I hope you are enjoing this town so far and all it has to offer."]
+      ["old-man", "pag", "I hope you are enjoing this town so far and all it has to offer. it seems ive dropped my glasses could you grab them for me?"]
     ],
 
-    "items": [],
+    "items": ["pags-glasses", 3],
 
     "enemies": [],
 

@@ -53,7 +53,7 @@
   "town-square": {
     "room": [
       "the scream came from a little girl that has been knocked over by a knight",
-      []
+      ["hills"]
     ],
     "characters": [
       ["mystery", "knight", "the knight tries to apologize to the little girl but the crowd shames her and curses her out of town... the people dont like the knights", 9]
@@ -66,7 +66,7 @@
     "structures": [],
     
     "events": [
-      [9, "rey stops, he reconizes the knight as she takes off. it has to be malith. rey takes off chasing malith"], []]
+      [9, "rey stops, he reconizes the knight as she takes off. it has to be malith. rey takes off chasing malith"], ["add", "town-of-jerico", "room", "hills"]]
     ]
   }
 }

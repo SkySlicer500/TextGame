@@ -45,7 +45,7 @@
     "structures": [],
     
     "events": [
-      [3, a scream is heard outside", [["add", "pags-shop", "room", "town-square"]]]
+      [3, "a scream is heard outside", [["add", "pags-shop", "room", "town-square"]]]
     ]
   },
   "town-square": {

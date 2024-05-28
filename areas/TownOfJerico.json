@@ -35,21 +35,17 @@
       ],
 
     "characters": [
-      ["old-man", "pag", "I hope you are enjoing this town so far and all it has to offer. I dont think ive asked you your name yet, how very rude of me."]
+      ["old-man", "pag", "I hope you are enjoing this town so far and all it has to offer."]
     ],
 
     "items": [],
 
     "enemies": [],
 
-    "structures": [
-      ["tell-name", "tell the old man your name", 2],
-      ["say-nothing", "dont tell him your name and make it awkward", 3]
-    ],
+    "structures": [],
     
     "events": [
-      [2, "ah yes, rey, what a strong name that is... \n a scream is heard outside", [["add", "pags-shop", "room", "town-square"]]],
-      [3, "ok then, no worries take your time... \n a scream is heard outside", [["add", "pags-shop", "room", "town-square"]]]
+      [3, a scream is heard outside", [["add", "pags-shop", "room", "town-square"]]]
     ]
   },
   "town-square": {

@@ -79,14 +79,14 @@
       ["mystery", "knight", "she stops on a hill when she notices shes been followed. she then takes a look at rey almost like she reconizes him", 91]
     ],
     
-    "items": [],
+    "items": ["long-sword", 18],
 
-    "enemies": ["knight1"],
+    "enemies": ["knight", "knight in shinning armor, they come equiped with a long sword"],
 
     "structures": [],
     
     "events": [
-      [9, "rey stops, he reconizes the knight as she takes off. it has to be malith. rey takes off chasing malith", [["add", "town-of-jerico", "room", "hills"]]]
+      [9, "rey stops, he reconizes the knight as she takes off. it has to be malith. rey takes off chasing malith", [["add", "town-of-jerico", "room", "hills"]]], [18, "", [["del", "inventory", "wood-sword"]]]
     ]
   }
 }

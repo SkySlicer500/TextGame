@@ -1,0 +1,51 @@
+ {
+        "area": [
+            "NAME OF THE AREA",
+            "DESCRIPTION OF THE AREA",
+            "STARTING ROOM NAME"
+        ],
+    
+        "ROOM NAME": {
+            "room": [
+                "ROOM DESCRIPTION",
+                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"],
+                (Optional Event Key)
+            ],
+    
+            "characters": [
+                ["FIRST NAME", "LAST NAME", "DIALOGUE", (OPTIONAL EVENT KEY)],
+                (SECOND CHARACTER)
+            ],
+    
+            "items": [
+                    #Neither "on-grab" or "on-use" need to be implemented
+                ["ITEM NAME", "ITEM DESCRIPTION", ATTACK VALUE, DEFENSE VALUE, {"on-grab": (OPTIONAL EVENT KEY), "on-use": (OPTIONAL EVENT KEY)}],
+                (SECOND ITEM)
+            ],
+    
+            "enemies": [
+                    ["ENEMY NAME", "ENEMY DESCRIPTION", HEALTH VALUE, ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
+                    (SECOND ENEMY)
+            ],
+    
+            "structures": [
+                ["STRUCTURE NAME", "STRUCTURE DESCRIPTION", (OPTIONAL EVENT KEY)],
+                (SECOND STRUCTURE)
+            ],
+    
+            "events": [
+                    #add/del event type ["add/del", "ROOM NAME", "TYPE", "PAYLOAD"]
+                            #inventory Room Name ["add/del", "inventory", "PAYLOAD"]
+                    #go event type ["go", "AREA NAME", "ROOM NAME"]
+                    #mod event type ["mod", ["ITEM NAME", (OPTIONAL SECOND ITEM NAME)], ITEM VARIABLE INDEX, "pre/suf/alt", CHANGE/"CHANGE"]
+                            #pre will add the change before the original
+                            #suf will add the change after the original
+                            #alt will completely replace the original
+                            #If using numbers instead of strings pre or suf will add the numbers together and alt will replace it
+                [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go/mod", "ROOM NAME", "TYPE", "PAYLOAD"], [OPTIONAL SECOND EVENT COMPLETE ACTION]]],
+                (SECOND EVENT)
+            ]
+        },
+    
+        "SECOND ROOM": {SECOND ROOM}
+    }

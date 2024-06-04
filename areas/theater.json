@@ -1,15 +1,14 @@
  {
         "area": [
-            "NAME OF THE AREA",
-            "DESCRIPTION OF THE AREA",
-            "STARTING ROOM NAME"
+            "Theatre",
+            "An old building that seems to be falling apart, it used to be for watching movies.",
+            "Lobby"
         ],
     
         "ROOM NAME": {
             "room": [
                 "ROOM DESCRIPTION",
-                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"],
-                (Optional Event Key)
+                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"]
             ],
     
             "characters": [

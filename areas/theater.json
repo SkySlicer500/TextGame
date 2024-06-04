@@ -2,49 +2,52 @@
         "area": [
             "Theatre",
             "An old building that seems to be falling apart, it used to be for watching movies.",
-            "Lobby"
+            "lobby"
         ],
-    
-        "ROOM NAME": {
+  
+        "lobby": {
             "room": [
-                "ROOM DESCRIPTION",
-                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"]
+                "A pretty dark room with the faint glow of sunshine flowing in. The place looks like it's been abandoned for years, you can see dust floating everywhere you go.",
+                ["hall"]
             ],
     
-            "characters": [
-                ["FIRST NAME", "LAST NAME", "DIALOGUE", (OPTIONAL EVENT KEY)],
-                (SECOND CHARACTER)
-            ],
+            "characters": [],
     
             "items": [
-                    #Neither "on-grab" or "on-use" need to be implemented
-                ["ITEM NAME", "ITEM DESCRIPTION", ATTACK VALUE, DEFENSE VALUE, {"on-grab": (OPTIONAL EVENT KEY), "on-use": (OPTIONAL EVENT KEY)}],
-                (SECOND ITEM)
+                ["old-popcorn", "Someone must have left this in the lobby right before the place shut down, it's pretty stale.", 10, 0]
             ],
     
-            "enemies": [
-                    ["ENEMY NAME", "ENEMY DESCRIPTION", HEALTH VALUE, ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
-                    (SECOND ENEMY)
-            ],
+            "enemies": [],
     
             "structures": [
-                ["STRUCTURE NAME", "STRUCTURE DESCRIPTION", (OPTIONAL EVENT KEY)],
-                (SECOND STRUCTURE)
+                ["lobby-counter", "This looks like where people would get their tickets and purchase refreshments."]
             ],
     
-            "events": [
-                    #add/del event type ["add/del", "ROOM NAME", "TYPE", "PAYLOAD"]
-                            #inventory Room Name ["add/del", "inventory", "PAYLOAD"]
-                    #go event type ["go", "AREA NAME", "ROOM NAME"]
-                    #mod event type ["mod", ["ITEM NAME", (OPTIONAL SECOND ITEM NAME)], ITEM VARIABLE INDEX, "pre/suf/alt", CHANGE/"CHANGE"]
-                            #pre will add the change before the original
-                            #suf will add the change after the original
-                            #alt will completely replace the original
-                            #If using numbers instead of strings pre or suf will add the numbers together and alt will replace it
-                [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go/mod", "ROOM NAME", "TYPE", "PAYLOAD"], [OPTIONAL SECOND EVENT COMPLETE ACTION]]],
-                (SECOND EVENT)
-            ]
+            "events": []
         },
+
+        "hall": {
+            "room": [
+                "It seems to go pretty far in all directions, you can see posters on the walls of the last films that were showed here.",
+                ["lobby"]
+            ],
     
-        "SECOND ROOM": {SECOND ROOM}
+            "characters": [],
+    
+            "items": [
+                ["old-popcorn", "Someone must have left this in the lobby right before the place shut down, it's pretty stale.", 10, 0]
+            ],
+    
+            "enemies": [],
+    
+            "structures": [
+                ["simple-poster", "Looks like one of those family friendly live action movies, there doesn't look like there's much substance to it. You can start to see why this place got shut down."],
+                ["torn-poster", "It's hard to make out what this poster says, it looks like it has been torn off. All that's really left is a large eyeball staring directly at you."],
+                ["action-poster", "Now this is some cool stuff! There's 30 guys fighting in a battle royal to the death! Wouldn't it have been cool to have seen this one?"],
+                ["romance-poster", "A guy, and a girl, alone in paris? Quite a unique set of circumstances wouldn't you say? There's usually more than two people in a big city."],
+                ["anime-poster", "Looks like something about a guy making pizza. It seems to take place in midieval times, maybe it's about how they used to make pizza in the olden days?"]
+            ],
+    
+            "events": []
+        },
     }

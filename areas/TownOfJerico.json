@@ -32,7 +32,7 @@
   "pags-shop": { 
      "room": [
       "a small oak cabin that smells of honey", 
-       ["town-square"]
+       []
       ],
 
     "characters": [
@@ -53,7 +53,7 @@
   "town-square": {
     "room": [
       "the scream came from a little girl that has been knocked over by a knight",
-      ["hills"]
+      []
     ],
     "characters": [
       ["mystery", "knight", "the knight tries to apologize to the little girl but the crowd shames her and curses her out of town... the people dont like the knights", 9]
@@ -88,11 +88,11 @@
     ],
 
     "structures": [
-      ["sign", "a sign that reads: town of jerico, this way --->"]
+      ["sign", "a sign that reads: town of jerico, this way --->", 89]
     ],
     
     "events": [
-     []
+     [89, "this path leads back to the town", [["add", "town-of-jerico", "room", "]
     ]
   }
 }

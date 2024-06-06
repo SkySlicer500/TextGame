@@ -79,11 +79,17 @@
       ["mystery", "knight", "she stops on a hill when she notices shes been followed. she then takes a look at rey almost like she reconizes him", 91]
     ],
     
-    "items": ["long-sword", 18],
+    "items": [
+      ["long-sword", 18]
+    ],
 
-    "enemies": ["knight", "knight in shinning armor, they come equiped with a long sword"],
+    "enemies": [
+      ["knight", "knight in shinning armor, they come equiped with a long sword"]
+    ],
 
-    "structures": ["sign", "a sign that reads: town of jerico, this way --->"],
+    "structures": [
+      ["sign", "a sign that reads: town of jerico, this way --->"]
+    ],
     
     "events": [
      []

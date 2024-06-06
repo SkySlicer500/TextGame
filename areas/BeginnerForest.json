@@ -23,7 +23,7 @@
     "enemies": [],
   
     "structures": [
-      ["entrance-gate", "giant gate to block off the enterance and exit of the forest"]
+      ["entrance-gate", "giant gate to block off the enterance and exit of the forest"], ["hollowed-out-tree-stump", "there seems to be flies coming from the stump..."], ["pile-of-leaves", "looks as if someone has jumped on it at one point"]
     ],
   
     "events": [

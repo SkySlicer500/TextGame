@@ -20,7 +20,7 @@
     "enemies": [],
   
     "structures": [
-      ["shop-door", "a doorway to the magical place of discounted items"]
+      ["shop-door", "a doorway to the magical place of discounted items"], ["shop-vender", "you see an man on the ground surounded by vases of many shapes and colors"], ["dog", "you try to pet the dog but he runs away"]
     ],
   
     "events": [

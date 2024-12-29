@@ -7,13 +7,13 @@
     
         "BeginForest": {
             "room": [
-                "ROOM DESCRIPTION",
+                "Dence forest covered in a heavy fog",
                 ["BeginForest", "EndForest"],
-                (Optional Event Key)
+                0
             ],
     
             "characters": [
-                ["FIRST NAME", "LAST NAME", "DIALOGUE", (OPTIONAL EVENT KEY)],
+                ["Rey", "LAST NAME", "DIALOGUE", (OPTIONAL EVENT KEY)],
                 (SECOND CHARACTER)
             ],
     

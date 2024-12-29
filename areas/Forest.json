@@ -5,10 +5,10 @@
             "FOTL"
         ],
     
-        "FOTL": {
+        "BeginForest": {
             "room": [
                 "ROOM DESCRIPTION",
-                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"],
+                ["BeginForest", "EndForest"],
                 (Optional Event Key)
             ],
     

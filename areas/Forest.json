@@ -2,7 +2,7 @@
         "Forest": [
             "Forest",
             "DESCRIPTION OF THE AREA",
-            "FOTL"
+            "BeginForest"
         ],
     
         "BeginForest": {
@@ -13,13 +13,13 @@
             ],
     
             "characters": [
-                ["Rey", "LAST NAME", "DIALOGUE", (OPTIONAL EVENT KEY)],
-                (SECOND CHARACTER)
+                ["Rey", "LAST NAME", "wrapped in white cloth head to toe, with plated aromor around his hands and feet.", 1],
+                
             ],
     
             "items": [
                     #Neither "on-grab" or "on-use" need to be implemented
-                ["ITEM NAME", "ITEM DESCRIPTION", ATTACK VALUE, DEFENSE VALUE, {"on-grab": (OPTIONAL EVENT KEY), "on-use": (OPTIONAL EVENT KEY)}],
+                ["map", "a map that has been drawn on with red dye leading to a town labbled Jerico", ATTACK VALUE, DEFENSE VALUE, {"on-grab": (OPTIONAL EVENT KEY), "on-use": (OPTIONAL EVENT KEY)}],
                 (SECOND ITEM)
             ],
     

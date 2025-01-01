@@ -1,7 +1,7 @@
  {
         "Forest": [
             "Forest",
-            "DESCRIPTION OF THE AREA",
+            "the start of somthig great",
             "BeginForest"
         ],
     
@@ -13,19 +13,19 @@
             ],
     
             "characters": [
-                ["Rey", "LAST NAME", "wrapped in white cloth head to toe, with plated aromor around his hands and feet.", 1],
+                ["Rey", "???", "wrapped in white cloth head to toe, with plated aromor around his hands and feet.", ],
                 
             ],
     
             "items": [
                     #Neither "on-grab" or "on-use" need to be implemented
-                ["map", "a map that has been drawn on with red dye leading to a town labbled Jerico", ATTACK VALUE, DEFENSE VALUE, {"on-grab": (OPTIONAL EVENT KEY), "on-use": (OPTIONAL EVENT KEY)}],
-                (SECOND ITEM)
+                ["map", "a map that has been drawn on with red dye leading to a town labbled Jerico", 0, 0, {"on-grab": 1}],
+                
             ],
     
             "enemies": [
-                    ["ENEMY NAME", "ENEMY DESCRIPTION", HEALTH VALUE, ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
-                    (SECOND ENEMY)
+                    ["", "", HEALTH VALUE, ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
+                    
             ],
     
             "structures": [

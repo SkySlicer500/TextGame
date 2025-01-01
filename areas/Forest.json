@@ -15,7 +15,7 @@
             "characters": [],
     
             "items": [
-                ["map", "a map that has been drawn on with red dye leading to a town labbled Jerico", 0, 0, {"on-grab": 1}],
+                ["map", "a map that has been drawn on with red dye leading to a town labbled Jerico", 0, 0, {"on-grab": 1}]
                 
             ],
     
@@ -24,7 +24,7 @@
             "structures": [],
 
             "events": [
-                   [1, "", [["del", "inventory", "map"], ["add", "BeginForest", "room", "EndForest"]]],
+                   [1, "", [["del", "inventory", "map"], ["add", "BeginForest", "room", "EndForest"]]]
             ]
         },
     

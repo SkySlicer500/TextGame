@@ -55,7 +55,8 @@
             ],
     
             "events": [
-                   [3, "(Rey does not respond)", [["del", "inventory", "map"], ["add", "BeginForest", "room", "EndForest"],
+                   [3, "(Rey does not respond)", [["del", "EndForest", "characters", "Old Man"], ["add", "EndForest", "character", "Old Man", 4],
+                    [4
             ]
         
     }

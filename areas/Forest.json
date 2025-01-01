@@ -58,7 +58,7 @@
                    [11, "(I could be a bandit or even a monster, Rey questions the old man)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "You don’t seem like a monster, or at least look like one?", 12]]]],
                    [12, "(Rey starts to get irritated at the fact that the old man won't leave him alone, Or you could be the monster luring me back to eat me!)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Well now I'm just being polite here. True I don't know you, youngin, but that doesn't make a difference; you're living, aren’t you? You must eat", 13]]]],
                    [13, "(Rey sighs and gives into the old man’s politeness)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Follow me, youngin", 14]]]],
-                   [14, "you and the old man are on the way to the town of jericho", ["add", "area", "outskirts"]]]
+                   [14, "you and the old man are on the way to the town of jericho", [["add", "area", "outskirts"]]]]
             ]
         }
 }

@@ -47,14 +47,14 @@
             
     
             "events": [
-                   [3, "(Rey does not respond)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "character", ["Old-Man", "", "Well, what’s it to ya?", 4]]]],
+                   [3, "(Rey does not respond)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Well, what’s it to ya?", 4]]]],
                    [4, "(rey still doesn’t respond to the man's polite gesture, instead giving him a distrustful stare like he’s waiting for him to try something)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Well, where are you coming from, youngin?", 5]]]],
-                   [5, "(Rey, walks past the man to an outlook squinting his eyes against the beaming sun to get a look of a seemingly small yet populated town)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "character", ["Old-Man", "", "Now that down there is Jericho", 6]]]], 
-                   [6, "(At this point, the old-man’s suspicion has reached its peak)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "character", ["Old-Man", "", "Tell me, really, who are you?", 7]]]],
-                   [7, "(Rey thinks of what to say to this stranger, what if he's an enemy waiting for me to drop my guard, or even worse, a monster posing as an Old-Man)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "character", ["Old-Man", "", "Well, what’s it to ya?", 8]]]],
-                   [8, "(Nothing, Rey finally says)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "character", ["Old-Man", "", "So tell me a little about yourself then", 9]]]],
-                   [9, "(Rey seems to put back on his quiet nature)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "character", ["Old-Man", "", "Well, you seem hungry; why don't you come down to my humble home and have a bite to eat?", 10]]]],
-                   [10, "(Why? rey asks)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "character", ["Old-Man", "", "Well, why not?", 4]]]]
+                   [5, "(Rey, walks past the man to an outlook squinting his eyes against the beaming sun to get a look of a seemingly small yet populated town)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Now that down there is Jericho", 6]]]], 
+                   [6, "(At this point, the old-man’s suspicion has reached its peak)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Tell me, really, who are you?", 7]]]],
+                   [7, "(Rey thinks of what to say to this stranger, what if he's an enemy waiting for me to drop my guard, or even worse, a monster posing as an Old-Man)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Well, what’s it to ya?", 8]]]],
+                   [8, "(Nothing, Rey finally says)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "So tell me a little about yourself then", 9]]]],
+                   [9, "(Rey seems to put back on his quiet nature)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Well, you seem hungry; why don't you come down to my humble home and have a bite to eat?", 10]]]],
+                   [10, "(Why? rey asks)", [["del", "EndForest", "characters", "Old-Man"], ["add", "EndForest", "characters", ["Old-Man", "", "Well, why not?", 4]]]]
             ]
         }
 }

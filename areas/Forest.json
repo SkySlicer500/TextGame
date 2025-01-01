@@ -8,42 +8,26 @@
         "BeginForest": {
             "room": [
                 "Dence forest covered in a heavy fog",
-                ["BeginForest", "EndForest"],
+                ["BeginForest"],
                 0
             ],
     
-            "characters": [
-                ["Rey", "???", "wrapped in white cloth head to toe, with plated aromor around his hands and feet.", ],
-                
-            ],
+            "characters": [],
     
             "items": [
-                    #Neither "on-grab" or "on-use" need to be implemented
                 ["map", "a map that has been drawn on with red dye leading to a town labbled Jerico", 0, 0, {"on-grab": 1}],
                 
             ],
     
-            "enemies": [
-                    ["", "", HEALTH VALUE, ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
-                    
-            ],
+            "enemies": [],
     
-            "structures": [
-                ["STRUCTURE NAME", "STRUCTURE DESCRIPTION", (OPTIONAL EVENT KEY)],
-                (SECOND STRUCTURE)
+            "structures": [],
+             
+                
             ],
     
             "events": [
-                    #add/del event type ["add/del", "ROOM NAME", "TYPE", "PAYLOAD"]
-                            #inventory Room Name ["add/del", "inventory", "PAYLOAD"]
-                    #go event type ["go", "AREA NAME", "ROOM NAME"]
-                    #mod event type ["mod", ["ITEM NAME", (OPTIONAL SECOND ITEM NAME)], ITEM VARIABLE INDEX, "pre/suf/alt", CHANGE/"CHANGE"]
-                            #pre will add the change before the original
-                            #suf will add the change after the original
-                            #alt will completely replace the original
-                            #If using numbers instead of strings pre or suf will add the numbers together and alt will replace it
-                [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go/mod", "ROOM NAME", "TYPE", "PAYLOAD"], [OPTIONAL SECOND EVENT COMPLETE ACTION]]],
-                (SECOND EVENT)
+                   [1, "", [["del", "inventory", "map"], ["add", "room", "EndForest"],
             ]
         },
     

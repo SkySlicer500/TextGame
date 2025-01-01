@@ -1,8 +1,7 @@
 {
     "areas": [
-        "BeginnerForest.json",
-        "TownOfJerico.json"
+        "Forest.json"
     ],
 
-    "start": "BeginnerForest.json"
+    "start": "Forest.json"
 }

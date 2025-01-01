@@ -24,7 +24,7 @@
             "structures": [],
 
             "events": [
-                   [1, "", [["del", "inventory", "map"], ["add", "BeginForest", "room", "EndForest"]],
+                   [1, "", [["del", "inventory", "map"], ["add", "BeginForest", "room", "EndForest"]]],
             ]
         },
     

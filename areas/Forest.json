@@ -27,9 +27,35 @@
             ],
     
             "events": [
-                   [1, "", [["del", "inventory", "map"], ["add", "room", "EndForest"],
+                   [1, "", [["del", "inventory", "map"], ["add", "BeginForest", "room", "EndForest"],
             ]
         },
     
-        "SECOND ROOM": {SECOND ROOM}
+        "EndForest": {
+            "room": [
+                "at the end of the path there is a rey of light as the trees start to clear up",
+                ["EndForest"],
+                2
+            ],
+    
+            "characters": [
+              ["Old", "Man", "I see you made it outta there, youngin" 3]
+            ],
+    
+            "items": []
+               
+                
+            ],
+    
+            "enemies": [],
+    
+            "structures": [],
+             
+                
+            ],
+    
+            "events": [
+                   [3, "(Rey does not respond)", [["del", "inventory", "map"], ["add", "BeginForest", "room", "EndForest"],
+            ]
+        
     }

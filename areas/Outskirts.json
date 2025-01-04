@@ -1,20 +1,20 @@
  {
         "area": [
             "Outskirts",
-            "DESCRIPTION OF THE AREA",
+            "a vally with a line of trees seemingly fowllowing the path",
             "Pathway"
         ],
     
-        "ROOM NAME": {
+        "Pathway": {
             "room": [
-                "ROOM DESCRIPTION",
-                ["ROOM NAME", "SECOND ROOM YOU CAN GO TO"],
-                (Optional Event Key)
+                "A path from the forest to the town of jericho",
+                ["Pathway"]
+                
             ],
     
             "characters": [
-                ["FIRST NAME", "LAST NAME", "DIALOGUE", (OPTIONAL EVENT KEY)],
-                (SECOND CHARACTER)
+                ["Old-Man", "", "DIALOGUE", 0],
+                
             ],
     
             "items": [
@@ -34,16 +34,7 @@
             ],
     
             "events": [
-                    #add/del event type ["add/del", "ROOM NAME", "TYPE", "PAYLOAD"]
-                            #inventory Room Name ["add/del", "inventory", "PAYLOAD"]
-                    #go event type ["go", "AREA NAME", "ROOM NAME"]
-                    #mod event type ["mod", ["ITEM NAME", (OPTIONAL SECOND ITEM NAME)], ITEM VARIABLE INDEX, "pre/suf/alt", CHANGE/"CHANGE"]
-                            #pre will add the change before the original
-                            #suf will add the change after the original
-                            #alt will completely replace the original
-                            #If using numbers instead of strings pre or suf will add the numbers together and alt will replace it
-                [EVENT KEY, "EVENT COMPLETE DIALOGUE", [["add/del/go/mod", "ROOM NAME", "TYPE", "PAYLOAD"], [OPTIONAL SECOND EVENT COMPLETE ACTION]]],
-                (SECOND EVENT)
+                    [add
             ]
         },
     

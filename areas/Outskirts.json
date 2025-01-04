@@ -13,28 +13,18 @@
             ],
     
             "characters": [
-                ["Old-Man", "", "DIALOGUE", 0],
+                ["Old-Man", "", "DIALOGUE", 0]
                 
             ],
     
-            "items": [
-                    #Neither "on-grab" or "on-use" need to be implemented
-                ["ITEM NAME", "ITEM DESCRIPTION", ATTACK VALUE, DEFENSE VALUE, {"on-grab": (OPTIONAL EVENT KEY), "on-use": (OPTIONAL EVENT KEY)}],
-                (SECOND ITEM)
-            ],
+            "items": [],
     
-            "enemies": [
-                    ["ENEMY NAME", "ENEMY DESCRIPTION", HEALTH VALUE, ATTACK VALUE, DEFENSE VALUE, (OPTIONAL EVENT KEY)],
-                    (SECOND ENEMY)
-            ],
-    
-            "structures": [
-                ["STRUCTURE NAME", "STRUCTURE DESCRIPTION", (OPTIONAL EVENT KEY)],
-                (SECOND STRUCTURE)
-            ],
-    
+            "enemies": [],
+                    
+            "structures": [],
+                
             "events": [
-                    [add
+                    [0, "add", "inventory", "LIGHT BEAM", 5, 1, 1
             ]
         },
     

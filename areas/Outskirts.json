@@ -24,8 +24,8 @@
             "structures": [],
                 
             "events": [
-                    [0, "", [["add", "inventory", ["SM-LIGHT-BEAM", 5, 10], 1]]], 
-                    [1, "Wolf enters the battlefeild", [["add", "Pathway", ["Wolf", "a visious creature", 15, 10, 0]]]]
+                    [0, "", [["add", "inventory", ["SM-LIGHT-BEAM", 5, 10]]]], 
+                    [0, "Wolf enters the battlefeild", [["add", "Pathway", ["Wolf", "a visious creature", 15, 10, 0]]]]
             ]
                      }
  }

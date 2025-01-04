@@ -1,7 +1,7 @@
 {
     "areas": [
         "Forest.json",
-        "outskirts"
+        "Outskirts.json"
     ],
 
     "start": "Forest.json"

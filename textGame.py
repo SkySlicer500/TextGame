@@ -6,6 +6,12 @@ currentArea = 0
 currentRoom = ""
 maxHealth = 100
 
+def formatInventory():
+	out = ""
+	for x in range(len(inventory)):
+		out = out + "\n" + inventory[x][0] + ": " + inventory[x][1] + " ATTACK: " + str(inventory[x][2]) + " DEFENSE: " + str(inventory[x][3])
+	return(out)
+
 def interact():
     global allAreas, currentArea, currentRoom, inventory
     print()
@@ -81,7 +87,7 @@ def interact():
             except(Exception):
                 print("Talk to who?")
         elif (keyword == "inv"):
-            print(inventory)
+            print(formatInventory())
         elif (keyword == "inspect"):
             try:
                 structure = playerIn[1]
@@ -224,12 +230,6 @@ def triggerEvent(eventKey):
                         else:
                             continue
                         break
-                        
-def formatInventory():
-	out = ""
-	for x in range(len(inventory)):
-		out = out + "\n" + inventory[x][0] + ": " + inventory[x][1] + " ATTACK: " + str(inventory[x][2]) + " DEFENSE: " + str(inventory[x][3])
-	return(out)
     
 def combat():
     enemy = allAreas[currentArea][currentRoom]["enemies"][0]

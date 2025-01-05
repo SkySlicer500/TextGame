@@ -224,7 +224,13 @@ def triggerEvent(eventKey):
                         else:
                             continue
                         break
-
+                        
+def formatInventory():
+	out = ""
+	for x in range(len(inventory)):
+		out = out + "\n" + inventory[x][0] + ": " + inventory[x][1] + " ATTACK: " + inventory[x][2] + " DEFENSE: " + inventory[x][3]
+	return(out)
+    
 def combat():
     enemy = allAreas[currentArea][currentRoom]["enemies"][0]
     health = maxHealth
@@ -238,10 +244,10 @@ def combat():
         mode = 0
         if (playerIn == "a" or playerIn == "Attack" or playerIn == "attack"):
             mode = 1
-            print("What will you attack with? (Type Item Name)\n", inventory)
+            print("What will you attack with? (Type Item Name)\n", formatInventory())
         elif (playerIn == "b" or playerIn == "Block" or playerIn == "block"):
             mode = 2
-            print("What will you block with? (Type Item Name)\n", inventory)
+            print("What will you block with? (Type Item Name)\n", formatInventory())
         else:
             print("You were too confused to do anything!")
         playerIn = input()

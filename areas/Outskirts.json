@@ -8,7 +8,7 @@
         "Pathway": {
             "room": [
                 "A path from the forest to the town of jericho",
-                ["Pathway"]
+               
                 
             ],
     
@@ -25,7 +25,7 @@
                 
             "events": [
                     [0, "", [["add", "inventory", ["SM-LIGHT-BEAM", "a small beam of light from the stars", 5, 10]]]], 
-                    [0, "Wolf enters the battlefeild", [["add", "Pathway", "enemies", ["Wolf", "a visious creature", 15, 10, 0]]]],
+                    [0, "Wolf enters the battlefeild", [["add", "Pathway", "enemies", ["Wolf", "a visious creature", 15, 10, 0]]]]
                     
             ]
                      }

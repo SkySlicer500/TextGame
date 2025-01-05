@@ -229,7 +229,7 @@ def formatInventory():
 	out = ""
 	for x in range(len(inventory)):
 		out = out + "\n" + inventory[x][0] + ": " + inventory[x][1] + " ATTACK: " + inventory[x][2] + " DEFENSE: " + inventory[x][3]
-	return(out)
+	return(str(out))
     
 def combat():
     enemy = allAreas[currentArea][currentRoom]["enemies"][0]

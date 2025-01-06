@@ -29,6 +29,8 @@ Once an Area file is created name it whatever you want followed by .json and put
             "area": [
                 "NAME OF THE AREA",
                 "DESCRIPTION OF THE AREA",
+                "STARTING INVENTORY NAME",
+                ["ATTACKING INVENTORY NAME", "DEFENDING INVENTORY NAME"],
                 "STARTING ROOM NAME"
             ],
         

@@ -1,6 +1,6 @@
 import json, random
 
-inventory = {[]}
+inventory = {}
 allAreas = []
 currentArea = 0
 currentRoom = ""
@@ -10,8 +10,14 @@ maxHealth = 100
 def formatInventory(inventoryName):
 	out = ""
 	for x in range(len(inventory[inventoryName])):
-		out = out + "\n" + inventory[inventoryName][x][0] + ": " + inventory[inventoryName][x][1] + " ATTACK: " + str(inventory[inventoryName][x][2]) + " DEFENSE: " + str(inventory[inventoryName][x][3])
+		out = out + "\n" + inventory[inventoryName][x][0] + ": " + inventory[inventoryName][x][1] + " ATTACK: " + str(inventory[inventoryName][x][3]) + " DEFENSE: " + str(inventory[inventoryName][x][4])
 	return(out)
+
+def listToText(listIn):
+    out = listIn[0]
+    for x in range(len(listIn)-1):
+        out = out + ", " + listIn[x+1]
+    return(out) 
 
 def interact():
     global allAreas, currentArea, currentRoom, currentInventory, inventory
@@ -92,7 +98,7 @@ def interact():
                 print(formatInventory(playerIn[1]))
                 currentInventory = playerIn[1]
             except:
-                print("You checked everywhere, but you don't have an inventory by that name.")
+                print("You checked everywhere, but you don't have an inventory by that name.\nYou do find the following inventory types:", listToText(list(inventory.keys())))
         elif (keyword == "inspect"):
             try:
                 structure = playerIn[1]
@@ -176,7 +182,7 @@ def interact():
         print("You were too lost in thought to do anything, you consider looking for \"help\" to remember what you were doing.")
 
 def triggerEvent(eventKey):
-    global allAreas, currentArea, currentRoom, inventory
+    global allAreas, currentArea, currentRoom, inventory, currentInventory
     for x in range(len(allAreas[currentArea][currentRoom]["events"])):
         if (eventKey == allAreas[currentArea][currentRoom]["events"][x][0]):
             print(allAreas[currentArea][currentRoom]["events"][x][1])
@@ -220,6 +226,12 @@ def triggerEvent(eventKey):
                                 break
                         try:
                             currentRoom = roomEffect
+                            currentInventory = allAreas[currentArea]["area"][2][0]
+                            for x in range(len(allAreas[currentArea]["area"][2])):
+                                try:
+                                    inventory[allAreas[currentArea]["area"][2][x]]
+                                except:    
+                                    inventory[allAreas[currentArea]["area"][2][x]] = []
                             print("You have entered:", allAreas[currentArea]["area"][0])
                             print(allAreas[currentArea][currentRoom]["room"][0])
                         except(Exception):
@@ -229,8 +241,8 @@ def triggerEvent(eventKey):
                 elif (action == "mod"):
                     inventoryType = allAreas[currentArea][currentRoom]["events"][x][2][y][1]
                     for z in range(len(inventory[inventoryType])):
-                        for w in range(len(location)): 
-                            if (location[w] == inventory[inventoryType][z][0]):
+                        for w in range(len(key)): 
+                            if (key[w] == inventory[inventoryType][z][0]):
                                 if (allAreas[currentArea][currentRoom]["events"][x][2][y][4] == "pre"): #Prefix
                                     inventory[inventoryType][z][allAreas[currentArea][currentRoom]["events"][x][2][y][3]] = allAreas[currentArea][currentRoom]["events"][x][2][y][5] + inventory[inventoryType][z][allAreas[currentArea][currentRoom]["events"][x][2][y][3]]
                                 elif (allAreas[currentArea][currentRoom]["events"][x][2][y][4] == "suf"): #Suffix
@@ -242,10 +254,11 @@ def triggerEvent(eventKey):
                             continue
                         break
     
-def combat(weaponInventories):
+def combat():
     enemy = allAreas[currentArea][currentRoom]["enemies"][0]
     health = maxHealth
     enemyHealth = enemy[2]
+    weaponInventories = allAreas[currentArea]["area"][3]
     while(enemyHealth > 0 and health > 0):
         enemyTempAttack = enemy[3]
         playerAttack = 0
@@ -255,16 +268,16 @@ def combat(weaponInventories):
         mode = 0
         if (playerIn == "a" or playerIn == "Attack" or playerIn == "attack"):
             mode = 1
-            print("What will you attack with? (Type Item Name)\n", formatInventory(weaponInventories[1]))
+            print("What will you attack with? (Type Item Name)\n", formatInventory(weaponInventories[0]))
         elif (playerIn == "b" or playerIn == "Block" or playerIn == "block"):
             mode = 2
-            print("What will you block with? (Type Item Name)\n", formatInventory(weaponInventories[0]))
+            print("What will you block with? (Type Item Name)\n", formatInventory(weaponInventories[1]))
         else:
             print("You were too confused to do anything!")
         playerIn = input()
         for x in range(len(inventory[weaponInventories[(mode+1)%2]])):
             if (playerIn == inventory[weaponInventories[(mode+1)%2]][x][0]):
-                playerAttack = inventory[weaponInventories[(mode+1)%2]][x][2]
+                playerAttack = inventory[weaponInventories[(mode+1)%2]][x][3]
                 playerTempAttack = playerAttack
                 if (playerTempAttack >= enemy[4]):
                     playerTempAttack -= enemy[4]
@@ -323,7 +336,12 @@ def start():
                 except(Exception):
                     print(loader["areas"][x], "in your loader.json was not added")
         try:
-            currentInventory = allAreas[currentArea]["area"][2]
+            currentInventory = allAreas[currentArea]["area"][2][0]
+            for x in range(len(allAreas[currentArea]["area"][2])):
+                try:
+                    inventory[allAreas[currentArea]["area"][2][x]]
+                except:    
+                    inventory[allAreas[currentArea]["area"][2][x]] = []
             currentRoom = allAreas[currentArea]["area"][4]
             print("You have entered:", allAreas[currentArea]["area"][0])
             print(allAreas[currentArea][currentRoom]["room"][0])
@@ -337,7 +355,7 @@ def start():
 
 def update():
     if (len(allAreas[currentArea][currentRoom]["enemies"]) > 0):
-        combat(allAreas[currentArea]["area"][3])
+        combat()
     else:
         interact()
     return(0)

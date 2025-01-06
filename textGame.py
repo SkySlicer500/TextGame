@@ -1,26 +1,27 @@
 import json, random
 
-inventory = []
+inventory = {[]}
 allAreas = []
 currentArea = 0
 currentRoom = ""
+currentInventory = ""
 maxHealth = 100
 
-def formatInventory():
+def formatInventory(inventoryName):
 	out = ""
-	for x in range(len(inventory)):
-		out = out + "\n" + inventory[x][0] + ": " + inventory[x][1] + " ATTACK: " + str(inventory[x][2]) + " DEFENSE: " + str(inventory[x][3])
+	for x in range(len(inventory[inventoryName])):
+		out = out + "\n" + inventory[inventoryName][x][0] + ": " + inventory[inventoryName][x][1] + " ATTACK: " + str(inventory[inventoryName][x][2]) + " DEFENSE: " + str(inventory[inventoryName][x][3])
 	return(out)
 
 def interact():
-    global allAreas, currentArea, currentRoom, inventory
+    global allAreas, currentArea, currentRoom, currentInventory, inventory
     print()
     playerIn = input().split()
     print()
     try:
         keyword = playerIn[0]
         if (keyword == "help"):
-            print("here - observe your current surroundings\ngoto [PATH] - take a path to a different room (only paths)\ngrab [ITEM] - pickup an item that you find in a room (only items)\ntalkto [PERSON] - have a conversation with someone in a room (only characters)\ninspect [STRUCTURE] - inspects a specified structure (only structures)\ninv - opens the inventory\nuse [INVENTORY ITEM] - use an item in your inventory\nsave [FILE NAME] - save to a save file\nload [FILE NAME] - load from a save file")
+            print("here - observe your current surroundings\ngoto [PATH] - take a path to a different room (only paths)\ngrab [ITEM] - pickup an item that you find in a room (only items)\ntalkto [PERSON] - have a conversation with someone in a room (only characters)\ninspect [STRUCTURE] - inspects a specified structure (only structures)\ninv [INVENTORY TYPE] - opens the specified inventory\nuse [INVENTORY ITEM] - use an item in your inventory\nsave [FILE NAME] - save to a save file\nload [FILE NAME] - load from a save file")
         elif (keyword == "here"):
             print(allAreas[currentArea][currentRoom]["room"][0])
             print("People:")
@@ -57,11 +58,11 @@ def interact():
                 item = playerIn[1]
                 for x in range(len(allAreas[currentArea][currentRoom]["items"])):
                     if (allAreas[currentArea][currentRoom]["items"][x][0] == item):
-                        inventory.append(allAreas[currentArea][currentRoom]["items"][x])
+                        inventory[allAreas[currentArea][currentRoom]["items"][x][2]].append(allAreas[currentArea][currentRoom]["items"][x])
                         print(allAreas[currentArea][currentRoom]["items"][x][0], "was added to your inventory!")
                         try:
-                            if (allAreas[currentArea][currentRoom]["items"][x][4]["on-grab"] != None):
-                                triggerEvent(allAreas[currentArea][currentRoom]["items"][x][4]["on-grab"])
+                            if (allAreas[currentArea][currentRoom]["items"][x][5]["on-grab"] != None):
+                                triggerEvent(allAreas[currentArea][currentRoom]["items"][x][5]["on-grab"])
                         except(Exception):
                             pass
                         del(allAreas[currentArea][currentRoom]["items"][x])
@@ -87,7 +88,11 @@ def interact():
             except(Exception):
                 print("Talk to who?")
         elif (keyword == "inv"):
-            print(formatInventory())
+            try:
+                print(formatInventory(playerIn[1]))
+                currentInventory = playerIn[1]
+            except:
+                print("You checked everywhere, but you don't have an inventory by that name.")
         elif (keyword == "inspect"):
             try:
                 structure = playerIn[1]
@@ -106,16 +111,16 @@ def interact():
                 print("Inspect what?")
         elif (keyword == "use"):
             try:
-                if (0 == len(inventory)):
-                    print("You couldn't find any items in your inventory.")
+                if (0 == len(inventory[currentInventory])):
+                    print("You couldn't find any items in your", currentInventory, "inventory.")
                 else:
                     item = playerIn[1]
-                    for x in range(len(inventory)):
-                        if (inventory[x][0] == item):
-                            triggerEvent(inventory[x][4]["on-use"])
+                    for x in range(len(inventory[currentInventory])):
+                        if (inventory[currentInventory][x][0] == item):
+                            triggerEvent(inventory[currentInventory][x][4]["on-use"])
                             break
-                        if (x == len(inventory)-1):
-                            print("You couldn't find an item like that in your inventory.")
+                        if (x == len(inventory[currentInventory])-1):
+                            print("You couldn't find an item like that in your", currentInventory, "inventory.")
             except(Exception):
                 print("Use what? That didn't seem to work...")         
         elif (keyword == "save"):
@@ -133,7 +138,8 @@ def interact():
                     "inventory": inventory,
                     "allAreas": allAreas,
                     "currentArea": currentArea,
-                    "currentRoom": currentRoom
+                    "currentRoom": currentRoom,
+                    "currentInventory": currentInventory
                 }
                 json.dump(toWrite, file)
                 file.close()
@@ -149,6 +155,7 @@ def interact():
                     allAreas = file["allAreas"]
                     currentArea = file["currentArea"]
                     currentRoom = file["currentRoom"]
+                    currentInventory = file["currentInventory"]
                     print("Load was successful")
                 except(Exception):
                     try:
@@ -157,6 +164,7 @@ def interact():
                         allAreas = file["allAreas"]
                         currentArea = file["currentArea"]
                         currentRoom = file["currentRoom"]
+                        currentInventory = file["currentInventory"]
                         print("Load was successful")
                     except(Exception):
                         print("File failed to be read")
@@ -178,7 +186,8 @@ def triggerEvent(eventKey):
                 key = allAreas[currentArea][currentRoom]["events"][x][2][y][2]
                 if (action == "add"):
                     if (location == "inventory"):
-                        inventory.append(key)
+                        effect = allAreas[currentArea][currentRoom]["events"][x][2][y][3]
+                        inventory[key].append(effect)
                     else:
                         effect = allAreas[currentArea][currentRoom]["events"][x][2][y][3]
                         if (key == "room"):
@@ -187,9 +196,10 @@ def triggerEvent(eventKey):
                             allAreas[currentArea][location][key].append(effect)
                 elif (action == "del"):
                     if (location == "inventory"):
-                        for z in range(len(inventory)):
-                            if (inventory[z][0] == key):
-                                del(inventory[z])
+                        effect = allAreas[currentArea][currentRoom]["events"][x][2][y][3]
+                        for z in range(len(inventory[key])):
+                            if (inventory[key][z][0] == effect):
+                                del(inventory[key][z])
                     else:
                         effect = allAreas[currentArea][currentRoom]["events"][x][2][y][3]
                         if (key == "room"):
@@ -217,21 +227,22 @@ def triggerEvent(eventKey):
                     except(Exception):
                         print("Your loader.json file could not be found") 
                 elif (action == "mod"):
-                    for z in range(len(inventory)):
+                    inventoryType = allAreas[currentArea][currentRoom]["events"][x][2][y][1]
+                    for z in range(len(inventory[inventoryType])):
                         for w in range(len(location)): 
-                            if (location[w] == inventory[z][0]):
-                                if (allAreas[currentArea][currentRoom]["events"][x][2][y][3] == "pre"): #Prefix
-                                    inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] = allAreas[currentArea][currentRoom]["events"][x][2][y][4] + inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]]
-                                elif (allAreas[currentArea][currentRoom]["events"][x][2][y][3] == "suf"): #Suffix
-                                    inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] = inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] + allAreas[currentArea][currentRoom]["events"][x][2][y][4]
-                                elif (allAreas[currentArea][currentRoom]["events"][x][2][y][3] == "alt"): #Alter
-                                    inventory[z][allAreas[currentArea][currentRoom]["events"][x][2][y][2]] = allAreas[currentArea][currentRoom]["events"][x][2][y][4]
+                            if (location[w] == inventory[inventoryType][z][0]):
+                                if (allAreas[currentArea][currentRoom]["events"][x][2][y][4] == "pre"): #Prefix
+                                    inventory[inventoryType][z][allAreas[currentArea][currentRoom]["events"][x][2][y][3]] = allAreas[currentArea][currentRoom]["events"][x][2][y][5] + inventory[inventoryType][z][allAreas[currentArea][currentRoom]["events"][x][2][y][3]]
+                                elif (allAreas[currentArea][currentRoom]["events"][x][2][y][4] == "suf"): #Suffix
+                                    inventory[inventoryType][z][allAreas[currentArea][currentRoom]["events"][x][2][y][3]] = inventory[inventoryType][z][allAreas[currentArea][currentRoom]["events"][x][2][y][3]] + allAreas[currentArea][currentRoom]["events"][x][2][y][5]
+                                elif (allAreas[currentArea][currentRoom]["events"][x][2][y][4] == "alt"): #Alter
+                                    inventory[inventoryType][z][allAreas[currentArea][currentRoom]["events"][x][2][y][3]] = allAreas[currentArea][currentRoom]["events"][x][2][y][5]
                                 break
                         else:
                             continue
                         break
     
-def combat():
+def combat(weaponInventories):
     enemy = allAreas[currentArea][currentRoom]["enemies"][0]
     health = maxHealth
     enemyHealth = enemy[2]
@@ -244,24 +255,24 @@ def combat():
         mode = 0
         if (playerIn == "a" or playerIn == "Attack" or playerIn == "attack"):
             mode = 1
-            print("What will you attack with? (Type Item Name)\n", formatInventory())
+            print("What will you attack with? (Type Item Name)\n", formatInventory(weaponInventories[1]))
         elif (playerIn == "b" or playerIn == "Block" or playerIn == "block"):
             mode = 2
-            print("What will you block with? (Type Item Name)\n", formatInventory())
+            print("What will you block with? (Type Item Name)\n", formatInventory(weaponInventories[0]))
         else:
             print("You were too confused to do anything!")
         playerIn = input()
-        for x in range(len(inventory)):
-            if (playerIn == inventory[x][0]):
-                playerAttack = inventory[x][2]
+        for x in range(len(inventory[weaponInventories[(mode+1)%2]])):
+            if (playerIn == inventory[weaponInventories[(mode+1)%2]][x][0]):
+                playerAttack = inventory[weaponInventories[(mode+1)%2]][x][2]
                 playerTempAttack = playerAttack
                 if (playerTempAttack >= enemy[4]):
                     playerTempAttack -= enemy[4]
                 else:
                     playerTempAttack = 0
 
-                if (enemyTempAttack >= inventory[x][3]):
-                    enemyTempAttack -= inventory[x][3]
+                if (enemyTempAttack >= inventory[weaponInventories[(mode+1)%2]][x][3]):
+                    enemyTempAttack -= inventory[weaponInventories[(mode+1)%2]][x][3]
                 else:
                     enemyTempAttack = 0
             else:
@@ -295,7 +306,7 @@ def combat():
         print("Prepare yourself! The", enemy[0], "is coming again!")
 
 def start():
-    global currentArea, currentRoom, allAreas
+    global currentArea, currentRoom, allAreas, currentInventory
     print("\nWelcome to Text Game, type \"help\" for usable commands.\n")
     try:
         loader = json.load(open("loader.json"))
@@ -312,7 +323,8 @@ def start():
                 except(Exception):
                     print(loader["areas"][x], "in your loader.json was not added")
         try:
-            currentRoom = allAreas[currentArea]["area"][2]
+            currentInventory = allAreas[currentArea]["area"][2]
+            currentRoom = allAreas[currentArea]["area"][4]
             print("You have entered:", allAreas[currentArea]["area"][0])
             print(allAreas[currentArea][currentRoom]["room"][0])
         except(Exception):
@@ -325,7 +337,7 @@ def start():
 
 def update():
     if (len(allAreas[currentArea][currentRoom]["enemies"]) > 0):
-        combat()
+        combat(allAreas[currentArea]["area"][3])
     else:
         interact()
     return(0)

@@ -1,5 +1,5 @@
 # Text Game
-An rpg game experienced through only the text in your console. Explore many different areas, with tons of stuff to explore in each one. If you want more to explore, you can download related projects or even create your own areas with the resources listed bellow.
+An rpg game experienced through only the text in your console. Explore many different areas, with tons of stuff to explore in each one. If you want more to explore, you can download related projects or even create your own areas with the resources listed below.
 
 # Running the Game
 In order to run this game press the green "<> Code" button at the top of the page, at the bottom of the tab download the Zip folder. Extract the files from the zip folder and select which version of the game you want to play. Note that certain versions have requirements in order to use.
